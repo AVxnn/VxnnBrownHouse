@@ -1,0 +1,373 @@
+
+@font-face
+  font-family: "Optima Cyr"
+  src: url("../../fonts/optima-cyr.woff") format("woff")
+
+$inter: "Inter", sans-serif
+$OptimaCyr: "Optima Cyr", sans-serif
+
+.container-help
+  display: flex
+  justify-content: center
+
+.container
+  width: 90%
+
+.background
+  overflow-x: hidden
+  display: flex
+  justify-content: center
+  width: 100%
+  height: 1080px
+  font-family: $inter
+  background-image: url("../../img/bg.png")
+
+  .header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    height: 96px
+    animation: opacity 2s
+
+    .header-logo
+      width: 157px
+      height: 58px
+
+    .header-nav
+      display: flex
+
+      .header-nav_item
+        margin-right: 32px
+        font-weight: 400
+        list-style: none
+
+        &:last-child
+          margin-right: 0
+
+        .nav-item_a
+          text-decoration: none
+          transition: all .15s ease-in-out
+          border-bottom: 1px solid rgba(0, 0, 0, 0.0)
+
+          &:hover
+            color: #eaeaea
+            border-bottom: 1px solid #eaeaea
+
+    .header-contact
+      display: flex
+      align-items: center
+
+      .header-contact_nav
+        display: flex
+        justify-content: space-between
+        width: 128px
+        margin-right: 42px
+
+        .contact-nav_a
+          line-height: 0
+
+          .contact-nav_img
+
+      .contact-number
+        text-decoration: none
+        transition: all .15s ease-in-out
+        border-bottom: 1px solid rgba(0, 0, 0, 0.0)
+
+        &:hover
+          color: #eaeaea
+          border-bottom: 1px solid #eaeaea
+
+  .content
+    margin-top: 32px
+    display: flex
+    flex-direction: column
+
+    .stepWork
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      animation: rightSlide 1s
+
+      .stepWork-img
+        padding: 15px
+        border-radius: 500%
+        border: 6px solid rgba(0, 0, 0, 0.3)
+        background-color: #FFFFFF
+        transition: all .1s ease-in-out
+        cursor: pointer
+
+        &:hover
+          background-color: #e1e1e1
+          border-color: rgba(0, 0, 0, 0.5)
+
+      .stepWork-text
+        font-size: 18px
+        line-height: 21.6px
+        font-family: $OptimaCyr
+        margin-left: 12px
+        width: 149px
+
+    .appartments
+      margin-top: 210px
+      width: 695px
+      animation: leftSlide 1s
+      
+      .appartments-text
+        font-size: 64px
+        font-weight: 400
+        line-height: 76.8px
+        font-family: $OptimaCyr
+
+
+    .choose
+      display: flex
+      flex-direction: column
+      align-items: flex-end
+      width: 90%
+      margin-top: 122px
+
+      .choose-container
+        width: 410px
+        animation: rightSlide 1s
+      
+        .choose-text
+          width: 410px
+          font-size: 24px
+          line-height: 33.6px
+
+        .choose-link
+          display: flex
+          align-items: center
+          margin-top: 32px
+          cursor: pointer
+
+          .choose-link-img
+            padding: 23px 17px
+            border-radius: 500%
+            border: 6px solid rgba(0, 0, 0, 0.3)
+            background-color: #FFFFFF
+            transition: all .1s ease-in-out
+
+            &:hover
+              background-color: #e1e1e1
+              border-color: rgba(0, 0, 0, 0.5)
+
+          .choose-link-text
+            margin-left: 16px
+
+
+    .arrowDown
+      display: flex
+      margin-top: 70px
+      justify-content: center
+      width: 100%
+      animation: opacity 1s
+
+      .arrowDown-img
+        animation: topDown 2s infinite
+        cursor: pointer
+
+    .slider-numbers
+      position: relative
+      top: -135px
+      right: 30px
+      transform: rotate(-90deg)
+      width: 75px
+      animation: opacity 1s
+
+      .slider-number-span
+        font-family: $OptimaCyr
+        font-size: 24px
+
+    .slider-pin
+      position: relative
+      width: 84px
+      display: flex
+      justify-content: space-between
+      align-items: center
+      bottom: 46px
+      animation: opacity 1s
+
+      .slider-pin-item
+        list-style: none
+        width: 8px
+        height: 8px
+        background-color: #FFFFFF
+        border-radius: 500%
+        cursor: pointer
+        transition: all .1s ease-in-out
+
+        &:hover
+          background-color: #e1e1e1
+
+      .slider-pin-item_active
+        border: 6px solid rgba(0, 0, 0, 0.3)
+
+.info-block
+  display: flex
+  flex-direction: row
+  justify-content: center
+  width: 100%
+  height: 1080px
+  font-family: $inter
+
+  .info-block_container
+    display: flex
+    width: 100%
+    justify-content: space-between
+    margin-top: 184px
+  
+    .info-first
+      width: 853px
+
+      .info-first_img
+        width: 853px
+        height: 526px
+
+      .info-first_title
+        font-size: 52px
+        font-family: $OptimaCyr
+        width: 524px
+        margin-top: 96px
+        color: #412923
+
+    .info-second
+      width: 563px
+
+      .info-second_text
+        margin-bottom: 66px
+        color: #412923
+
+      .info-second_img
+
+
+
+.seven-problems
+  margin-top: 60px
+  position: relative
+  width: 518px
+  left: 30%
+
+  .right-block_seven
+    font-family: $OptimaCyr
+    color: #CC9268
+    font-size: 104px
+
+  .right-block_title
+    font-family: $OptimaCyr
+    color: #412923
+    font-size: 52px
+    margin-bottom: 64px
+
+.slider-block
+  font-family: $inter
+  display: flex
+  justify-content: space-between
+  margin-bottom: 100px
+
+
+  .left-block
+    position: relative
+    width: 418px
+    height: 718px
+
+    .left-block_title
+      font-family: $OptimaCyr
+      color: #A19B8E
+      font-size: 30px
+      margin-bottom: 24px
+
+    .left-block_paragraph
+      color: #412923
+
+    .left-block-slider-count
+      transform: rotate(-90deg)
+      position: absolute
+      bottom: 30px
+      right: -20px
+
+      .left-block-slider-count_text
+        font-family: $OptimaCyr
+
+        font-size: 30px
+        color: #A19B8E
+
+
+    .left-block-slider-buttons
+      position: absolute
+      bottom: 0
+
+      .slider-btn
+        padding: 23px 18px
+        border: 1px solid #E9E6E0
+        border-radius: 500%
+        cursor: pointer
+        transition: all .1s ease-in-out
+
+        &:hover
+          background-color: #e1e1e1
+
+      .left-block-slider-buttons-left
+        transform: rotate(180deg)
+        margin-right: 36px
+
+      .left-block-slider-buttons-right
+
+
+  .right-block
+    overflow: hidden
+    width: 1201px
+
+    .right-block-slider
+      position: relative
+      width: calc(437px * 7)
+
+      .right-block-slider-item
+        position: relative
+        width: 417px
+        height: 718px
+        margin-right: 20px
+
+
+
+
+
+        
+@keyframes opacity
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+
+@keyframes leftSlide
+  0%
+    opacity: 0
+    margin-left: -200px
+
+  100%
+    opacity: 1
+    margin-left: 0
+
+@keyframes rightSlide
+  0%
+    opacity: 0
+    margin-right: -100px
+
+  100%
+    opacity: 1
+    margin-left: 0
+
+
+@keyframes topDown
+  0%
+    top: 0
+
+  50%
+    transform: translateY(7px)
+
+  50%
+    top: 0
+
