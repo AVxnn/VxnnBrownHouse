@@ -11,6 +11,9 @@ import park from '../../img/park.png'
 import people from '../../img/people.png'
 import children from '../../img/children.png'
 import weed from '../../img/weed.png'
+import akademia from '../../img/akadimia.png'
+import apartaments from '../../img/appartaments.png'
+import message from '../../img/message.png'
 
 import './style.css'
 
@@ -116,6 +119,151 @@ const Main = () => {
                     </section>
                 </section>
             </section>
+            <section className='container-help'>
+                <section className='container'>
+                    <section className='developer'>
+                        <section className='developer-left'>
+                            <img className='developer-left_img' src={akademia} alt="akademia"/>
+                        </section>
+                        <section className='developer-right'>
+                            <h4 className='developer-right_title'>НАДЕЖНЫЙ ЗАСТРОЙЩИК</h4>
+                            <section className='developer-right-info'>
+                                <p className='developer-right-info-text'>ГК «Академия» строит жилье и коммерческую <br/> недвижимость с 2015 года. Компания выполняет полный <br/> цикл работ: от разработки концепции до управления <br/> готовым объектом.</p>
+                                <section className='developer-right-info-item'>
+                                    <p className='developer-right-info-item_text'><span className='item_slash'>/</span> 7  ЛЕТ</p>
+                                    <span className='developer-right-info-item_down'>Работы</span>
+                                </section>
+                                <section className='developer-right-info-item'>
+                                    <p className='developer-right-info-item_text'><span className='item_slash'>/</span> 3</p>
+                                    <span className='developer-right-info-item_down'>Проекта</span>
+                                </section>
+                                <section className='developer-right-info-item'>
+                                    <p className='developer-right-info-item_text'><span className='item_slash'>/</span> 465</p>
+                                    <span className='developer-right-info-item_down'>Счастливых семей</span>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section className='map-background'>
+                <section className='container'>
+                    <section className='map-top'>
+                        <nav className='map-nav'>
+                            <li className='map-nav-item'>ВСЕ</li>
+                            <li className='map-nav-item'>ШКОЛА</li>
+                            <li className='map-nav-item'>РЕСТОРАНЫ</li>
+                            <li className='map-nav-item'>МАГАЗИНЫ</li>
+                            <li className='map-nav-item'>ЗДОРОВЬЕ</li>
+                            <li className='map-nav-item'>ОТДЫХ</li>
+                        </nav>
+                    </section>
+                    <section className='map-bottom'>
+                        <h4 className='map-bottom-title'>ВСЕ ВОЗМОЖНОСТИ <span className='map-bottom-title_gold'>В ОДНОМ МЕСТЕ</span></h4>
+                    </section>
+                </section>
+            </section>
+            <section className='container-help'>
+                <section className='container'>
+                    <section className='news'>
+                        <section className='news-header'>
+                            <h3 className='news-header-title'>Новости о ЖК</h3>
+                            <section className='news-header-tool'>
+                                <img className='news-header-tool-buttons-left' src={arrow} alt="arrow"/>
+                                <img className='news-header-tool-buttons-right' src={arrow} alt="arrow"/>
+                            </section>
+                        </section>
+                        <section className='news-info'>
+                            <section className='news-info-item'>
+                                <time className='news-info-time'>12 июня 2020</time>
+                                <h5 className='news-info-item-title'>Подписан договор с ЛенРусСтрой</h5>
+                                <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
+                            </section>
+                            <section className='news-info-item'>
+                                <time className='news-info-time'>12 июня 2020</time>
+                                <h5 className='news-info-item-title'>Подписан договор проектного финансирования с ООО«Сбербанк»</h5>
+                                <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
+                            </section>
+                            <section className='news-info-item'>
+                                <time className='news-info-time'>12 июня 2020</time>
+                                <h5 className='news-info-item-title'>Подписан договор с ЛенРусСтрой</h5>
+                                <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section className='container-help'>
+                <section className='container'>
+                    <section className='apartments'>
+                        <section className='apartments-header'>
+                            <h3 className='apartments-header-title'>Найдите свою <br/> идеальную квартиру</h3>
+                            <section className='apartments-header-tool'>
+                                <img className='apartments-header-tool-buttons-right' src={arrow} alt="arrow"/>
+                                <span className='apartments-header-tool-text'>ВЫБРАТЬ КВАРТИРУ</span>
+                            </section>
+                        </section>
+                        <section className='apartments-info'>
+                            <section className='apartments-info-item'>
+                                <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
+                                <h4 className='apartments-info-price'>2 739 000 руб.</h4>
+                                <p className='apartments-info-apart'>1 комн. 32.4 м² <span className='apartments-info-apart_roof'>- Этаж 3/9</span></p>
+                            </section>
+                            <section className='apartments-info-item'>
+                                <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
+                                <h4 className='apartments-info-price'>2 769 000 руб.</h4>
+                                <p className='apartments-info-apart'>1 комн. 33.4 м² <span className='apartments-info-apart_roof'>- Этаж 5/9</span></p>
+                            </section>
+                            <section className='apartments-info-item'>
+                                <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
+                                <h4 className='apartments-info-price'>2 719 000 руб.</h4>
+                                <p className='apartments-info-apart'>1 комн. 31.4 м² <span className='apartments-info-apart_roof'>- Этаж 2/9</span></p>
+                            </section>
+                            <section className='apartments-info-item'>
+                                <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
+                                <h4 className='apartments-info-price'>2 799 000 руб.</h4>
+                                <p className='apartments-info-apart'>1 комн. 32.4 м² <span className='apartments-info-apart_roof'>- Этаж 7/9</span></p>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <footer className='footer'>
+                <section className='container'>
+                    <section className='footer-top'>
+                        <section className='footer-top-left'>
+                            <h2 className='footer-top-left-title'>СВЯЖИТЕСЬ С НАМИ</h2>
+                            <section className='footer-top-left-btn'>
+                                <img className='footer-top-left-btn_img' src={message} alt="message"/>
+                                <span className='footer-top-left-btn_text'>ОСТАВИТЬ ЗАЯВКУ</span>
+                            </section>
+                        </section>
+                        <section className='footer-top-right'>
+                            <a className='footer-top-right-number' href="#">+7 (812) 429-56-73</a>
+                            <a className='footer-top-right-site' href="#">info@brownhouse.ru</a>
+                            <section className='footer-top-right-contacts'>
+                                <img className='footer-top-right-contacts-item' src={vk} alt="vk"/>
+                                <img className='footer-top-right-contacts-item' src={inst} alt="instagram"/>
+                                <img className='footer-top-right-contacts-item' src={fb} alt="facebook"/>
+                            </section>
+                        </section>
+                    </section>
+                    <section className='footer-map'>
+                        <ul className='footer-map-list'>
+                            <li className='footer-map-list-item'><a href="#">Квартиры</a></li>
+                            <li className='footer-map-list-item'><a href="#">Как купить</a></li>
+                            <li className='footer-map-list-item'><a href="#">Ход строительства</a></li>
+                            <li className='footer-map-list-item'><a href="#">Коммерция</a></li>
+                            <li className='footer-map-list-item'><a href="#">Документы</a></li>
+                            <li className='footer-map-list-item'><a href="#">Контакты</a></li>
+                        </ul>
+                        <span className='footer-map-createEyeTronic'>Разработано в <span className='footer-map-createEyeTronic_style'>Eyetronic</span>, 2021©</span>
+                    </section>
+                    <section className='footer-map-last-info'>
+                        <span className='footer-map-last-info-text'>Информация, предоставленная на сайте, не является публичной офертой. Все цены действительны на 25 июня 2021 г. при условии единовременной оплаты. Элементы благоустройства, иллюстрации и описания дизайн-проектов <br/> квартир приведены для сведения, являются примером возможной организации жилого пространства. Представленные сведения носят исключительно информационный характер.</span>
+                    </section>
+                </section>
+            </footer>
         </>
     );
 };

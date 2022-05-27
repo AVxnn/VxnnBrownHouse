@@ -13,6 +13,7 @@
 
 .background {
   overflow-x: hidden;
+  overflow-y: hidden;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -26,6 +27,7 @@
   justify-content: space-between;
   width: 100%;
   height: 96px;
+  margin-top: 18px;
   animation: opacity 2s;
 }
 .background .header .header-logo {
@@ -105,7 +107,7 @@
   width: 149px;
 }
 .background .content .appartments {
-  margin-top: 210px;
+  margin-top: 190px;
   width: 695px;
   animation: leftSlide 1s;
 }
@@ -114,6 +116,9 @@
   font-weight: 400;
   line-height: 76.8px;
   font-family: "Optima Cyr", sans-serif;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
 }
 .background .content .choose {
   display: flex;
@@ -249,6 +254,7 @@
   font-family: "Optima Cyr", sans-serif;
   color: #412923;
   font-size: 52px;
+  font-weight: 400;
   margin-bottom: 64px;
 }
 
@@ -316,6 +322,385 @@
   margin-right: 20px;
 }
 
+.developer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 176px 0;
+  font-family: "Inter", sans-serif;
+}
+.developer .developer-left {
+  margin-right: 166px;
+}
+.developer .developer-left .developer-left_img {
+  width: 417px;
+  height: 417px;
+}
+.developer .developer-right {
+  display: flex;
+  flex-direction: column;
+}
+.developer .developer-right .developer-right_title {
+  font-family: "Optima Cyr", sans-serif;
+  font-size: 30px;
+  margin-bottom: 32px;
+  color: #412923;
+}
+.developer .developer-right .developer-right-info {
+  display: flex;
+}
+.developer .developer-right .developer-right-info .developer-right-info-text {
+  font-size: 18px;
+  color: #412923;
+  margin-right: 20px;
+}
+.developer .developer-right .developer-right-info .developer-right-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 45px;
+}
+.developer .developer-right .developer-right-info .developer-right-info-item .developer-right-info-item_text {
+  font-family: "Optima Cyr", sans-serif;
+  margin-bottom: 8px;
+  font-size: 30px;
+  color: #412923;
+}
+.developer .developer-right .developer-right-info .developer-right-info-item .developer-right-info-item_text .item_slash {
+  font-family: "Optima Cyr", sans-serif;
+  font-size: 30px;
+  color: #CC9268;
+}
+.developer .developer-right .developer-right-info .developer-right-info-item .developer-right-info-item_down {
+  margin-left: 18px;
+  color: #412923;
+}
+
+.map-background {
+  position: relative;
+  width: 100%;
+  height: 1080px;
+  background-image: url("../../img/Map.png");
+  display: flex;
+  justify-content: center;
+}
+.map-background .map-top {
+  position: relative;
+  top: 80px;
+}
+.map-background .map-nav .map-nav-item {
+  list-style: none;
+  margin-bottom: 16px;
+  font-family: "Optima Cyr", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.map-background .map-bottom {
+  position: absolute;
+  bottom: 58px;
+}
+.map-background .map-bottom .map-bottom-title {
+  display: flex;
+  flex-direction: column;
+  font-family: "Optima Cyr", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.map-background .map-bottom .map-bottom-title .map-bottom-title_gold {
+  font-family: "Optima Cyr", sans-serif;
+  font-size: 64px;
+  color: #CC9268;
+}
+
+.news {
+  width: 100%;
+  margin: 186px 0;
+  font-family: "Inter", sans-serif;
+}
+.news .news-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.news .news-header .news-header-title {
+  font-family: "Optima Cyr", sans-serif;
+  font-weight: 400;
+  font-size: 52px;
+  color: #412923;
+}
+.news .news-header .news-header-tool {
+  position: relative;
+}
+.news .news-header .news-header-tool .news-header-tool-buttons-left {
+  transform: rotate(-180deg);
+  margin-right: 36px;
+  padding: 23px 18px;
+  border: 1px solid #E9E6E0;
+  border-radius: 500%;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.news .news-header .news-header-tool .news-header-tool-buttons-left:hover {
+  background-color: #e1e1e1;
+}
+.news .news-header .news-header-tool .news-header-tool-buttons-right {
+  padding: 23px 18px;
+  border: 1px solid #E9E6E0;
+  border-radius: 500%;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.news .news-header .news-header-tool .news-header-tool-buttons-right:hover {
+  background-color: #e1e1e1;
+}
+.news .news-info {
+  display: flex;
+  margin-top: 64px;
+  justify-content: space-between;
+}
+.news .news-info .news-info-item {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 40px;
+  width: 467px;
+  height: 155px;
+  border: 1px solid #E9E6E0;
+}
+.news .news-info .news-info-item .news-info-time {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: #A19B8E;
+}
+.news .news-info .news-info-item .news-info-item-title {
+  font-family: "Optima Cyr", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: #CC9268;
+}
+.news .news-info .news-info-item .news-info-item-description {
+  font-weight: 400;
+  font-size: 15px;
+  color: #412923;
+}
+
+.apartments {
+  width: 100%;
+  margin: 26px 0 184px 0;
+  font-family: "Inter", sans-serif;
+}
+.apartments .apartments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.apartments .apartments-header .apartments-header-title {
+  font-size: 52px;
+  color: #412923;
+  font-weight: 400;
+  font-family: "Optima Cyr", sans-serif;
+}
+.apartments .apartments-header .apartments-header-tool {
+  display: flex;
+  align-items: center;
+}
+.apartments .apartments-header .apartments-header-tool .apartments-header-tool-buttons-right {
+  padding: 23px 18px;
+  border: 1px solid #E9E6E0;
+  border-radius: 500%;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  margin-right: 16px;
+}
+.apartments .apartments-header .apartments-header-tool .apartments-header-tool-buttons-right:hover {
+  background-color: #e1e1e1;
+}
+.apartments .apartments-header .apartments-header-tool .apartments-header-tool-text {
+  font-size: 24px;
+  color: #412923;
+  font-weight: 400;
+  font-family: "Optima Cyr", sans-serif;
+}
+.apartments .apartments-info {
+  display: flex;
+  margin-top: 64px;
+}
+.apartments .apartments-info .apartments-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 417px;
+  height: 564px;
+  border-bottom: 1px solid #E9E6E0;
+  margin-right: 20px;
+}
+.apartments .apartments-info .apartments-info-item .apartments-info-img {
+  padding: 55px 85px;
+  width: 247px;
+  height: 337.28px;
+  margin-bottom: 8px;
+}
+.apartments .apartments-info .apartments-info-item .apartments-info-price {
+  font-size: 30px;
+  color: #412923;
+  font-weight: 400;
+  margin-bottom: 8px;
+  font-family: "Optima Cyr", sans-serif;
+}
+.apartments .apartments-info .apartments-info-item .apartments-info-apart {
+  font-size: 18px;
+  color: #412923;
+  font-weight: 400;
+}
+.apartments .apartments-info .apartments-info-item .apartments-info-apart .apartments-info-apart_roof {
+  font-size: 18px;
+  color: #A19B8E;
+  font-weight: 400;
+}
+
+.footer {
+  width: 100%;
+  height: 520px;
+  background-color: #412923;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+.footer .footer-top {
+  margin: 80px 0 88px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .footer-top .footer-top-left-title {
+  font-size: 52px;
+  color: #E9E6E0;
+  font-weight: 400;
+  margin-bottom: 40px;
+  font-family: "Optima Cyr", sans-serif;
+}
+.footer .footer-top .footer-top-left-btn {
+  display: flex;
+  align-items: center;
+}
+.footer .footer-top .footer-top-left-btn .footer-top-left-btn_img {
+  padding: 17px;
+  border-radius: 500%;
+  margin-right: 16px;
+  background-color: #CC9268;
+  cursor: pointer;
+}
+.footer .footer-top .footer-top-left-btn .footer-top-left-btn_img:hover {
+  background-color: #a27454;
+}
+.footer .footer-top-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer .footer-top-right .footer-top-right-number {
+  font-size: 18px;
+  color: #E9E6E0;
+  text-decoration: none;
+  font-weight: 400;
+}
+.footer .footer-top-right .footer-top-right-number:hover {
+  color: #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+.footer .footer-top-right .footer-top-right-site {
+  font-size: 18px;
+  color: #E9E6E0;
+  text-decoration: none;
+  font-weight: 400;
+}
+.footer .footer-top-right .footer-top-right-site:hover {
+  color: #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+.footer .footer-top-right .footer-top-right-contacts {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer .footer-top-right .footer-top-right-contacts .footer-top-right-contacts-item {
+  margin-left: 19px;
+  cursor: pointer;
+}
+.footer .footer-map {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 32px 0;
+  border-top: 1px solid #4B3D3A;
+  border-bottom: 1px solid #4B3D3A;
+}
+.footer .footer-map .footer-map-list {
+  display: flex;
+  list-style: none;
+}
+.footer .footer-map .footer-map-list .footer-map-list-item {
+  margin-right: 32px;
+}
+.footer .footer-map .footer-map-list .footer-map-list-item a {
+  text-decoration: none;
+}
+.footer .footer-map .footer-map-list .footer-map-list-item a:hover {
+  color: #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+.footer .footer-map .footer-map-createEyeTronic {
+  font-size: 18px;
+  color: #A29B8E;
+  font-weight: 400;
+  cursor: pointer;
+}
+.footer .footer-map .footer-map-createEyeTronic .footer-map-createEyeTronic_style:hover {
+  border-bottom: 1px solid #eaeaea;
+}
+.footer .footer-map-last-info {
+  margin-top: 32px;
+}
+.footer .footer-map-last-info .footer-map-last-info-text {
+  font-size: 15px;
+  color: #A19B8E;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1440px) {
+  .header .header-logo {
+    width: 102px !important;
+    height: 38px !important;
+  }
+  .header .header-nav .header-nav_item .nav-item_a {
+    font-size: 15px;
+  }
+  .header .header-contact .header-contact_nav {
+    width: 88px !important;
+  }
+  .header .header-contact .header-contact_nav .contact-nav_a .contact-nav_img {
+    width: 22px;
+    height: 22px;
+  }
+  .header .header-contact .contact-number {
+    font-size: 15px;
+  }
+
+  .content .stepWork .stepWork-text {
+    font-size: 15px !important;
+  }
+  .content .appartments .appartments-text {
+    font-size: 52px !important;
+  }
+  .content .choose .choose-container {
+    width: 320px !important;
+  }
+  .content .choose .choose-container .choose-text {
+    font-size: 20px !important;
+  }
+}
 @keyframes opacity {
   0% {
     opacity: 0;
