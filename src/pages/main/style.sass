@@ -32,8 +32,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
     align-items: center
     justify-content: space-between
     width: 100%
-    height: calc(38px + (58 - 38) * ((100vw - 1280px) / (1920 - 1280)))
-    margin-top: 18px
+    height: calc(74px + (96 - 74) * ((100vw - 1280px) / (1920 - 1280)))
     animation: opacity 2s
 
     a
@@ -63,31 +62,34 @@ $OptimaCyr: "Optima Cyr", sans-serif
           &:hover
             color: #CC9268
 
-    .header-contact
+    .header-contact-container
       display: flex
-      align-items: center
 
-      .header-contact_nav
+      .header-contact
         display: flex
-        justify-content: space-between
-        width: calc(88px + (128 - 88) * ((100vw - 1280px) / (1920 - 1280)))
-        margin-right: 42px
+        align-items: center
 
-        .contact-nav_a
-          line-height: 0
+        .header-contact_nav
+          display: flex
+          justify-content: space-between
+          width: calc(88px + (128 - 88) * ((100vw - 1280px) / (1920 - 1280)))
+          margin-right: 42px
 
-          .contact-nav_img
-            width: calc(22px + (30 - 22) * ((100vw - 1280px) / (1920 - 1280)))
+          .contact-nav_a
+            line-height: 0
+
+            .contact-nav_img
+              width: calc(22px + (30 - 22) * ((100vw - 1280px) / (1920 - 1280)))
 
 
-      .contact-number
-        text-decoration: none
-        font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
-        transition: all .15s ease-in-out
-        border-bottom: 1px solid rgba(0, 0, 0, 0.0)
+        .contact-number
+          text-decoration: none
+          font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
+          transition: all .15s ease-in-out
+          border-bottom: 1px solid rgba(0, 0, 0, 0.0)
 
-        &:hover
-          color: #CC9268
+          &:hover
+            color: #CC9268
 
     .mobile-menu-btn
       position: relative
@@ -135,6 +137,10 @@ $OptimaCyr: "Optima Cyr", sans-serif
       align-items: center
       animation: rightSlide 1s
 
+      .stepWork-container
+        display: flex
+        align-items: center
+
       .stepWork-img
         padding: 15px
         border-radius: 500%
@@ -148,7 +154,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
         line-height: 21.6px
         font-family: $OptimaCyr
         margin-left: 12px
-        width: auto
+        width: calc(116px + (149 - 116) * ((100vw - 1280px) / (1920 - 1280)))
         cursor: pointer
 
     .appartments
@@ -167,12 +173,12 @@ $OptimaCyr: "Optima Cyr", sans-serif
       display: flex
       position: relative
       flex-direction: column
-      width: 410px
+      width: calc(350px + (410 - 350) * ((100vw - 1280px) / (1920 - 1280)))
       margin-top: calc(94px + (122 - 94) * ((100vw - 1280px) / (1920 - 1280)))
       left: calc(668px + (1170 - 668) * ((100vw - 1280px) / (1920 - 1280)))
 
       .choose-container
-        width: 410px
+        width: 100%
         animation: rightSlide 1s
       
         .choose-text
@@ -183,7 +189,8 @@ $OptimaCyr: "Optima Cyr", sans-serif
         .choose-link
           display: flex
           align-items: center
-          margin-top: 32px
+          margin-top: calc(16px + (32 - 16) * ((100vw - 1280px) / (1920 - 1280)))
+          line-height: calc(28px + (33.6 - 28) * ((100vw - 1280px) / (1920 - 1280)))
           cursor: pointer
 
           &:hover > .choose-link-img
@@ -224,7 +231,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
 
       .slider-numbers-container
         position: relative
-        left: -24px
+        left: -28px
         width: 74px
         height: 34px
         transform: rotate(-90deg)
@@ -278,7 +285,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
       margin-right: calc(115px + (311 - 115) * ((100vw - 1280px) / (1920 - 1280)))
 
       .info-first_img
-        width: calc(644px + (853 - 644) * ((100vw - 1280px) / (1920 - 1280)))
+        width: 100%
 
       .info-first_title
         font-size: calc(40px + (52 - 40) * ((100vw - 1280px) / (1920 - 1280)))
@@ -293,10 +300,11 @@ $OptimaCyr: "Optima Cyr", sans-serif
       .info-second_text
         margin-bottom: calc(50px + (66 - 50) * ((100vw - 1280px) / (1920 - 1280)))
         font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
+        line-height: calc(21px + (25 - 21) * ((100vw - 1280px) / (1920 - 1280)))
         color: #412923
 
       .info-second_img
-        width: calc(360px + (563 - 360) * ((100vw - 1280px) / (1920 - 1280)))
+        width: 100%
 
 
 .seven-problems-block
@@ -470,7 +478,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
 
 
   .map-nav
-    width: 400px
+    width: 150px
 
     .map-nav-item
       list-style: none
@@ -635,7 +643,6 @@ $OptimaCyr: "Optima Cyr", sans-serif
       flex-direction: column
       align-items: center
       width: calc(291px + (417 - 291) * ((100vw - 1280px) / (1920 - 1280)))
-      height: 564px
       border-bottom: 1px solid #E9E6E0
       margin-right: 20px
       cursor: pointer
@@ -669,6 +676,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
       .apartments-info-apart
         font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
         color: #412923
+        margin-bottom: calc(24px + (32 - 24) * ((100vw - 1280px) / (1920 - 1280)))
         font-weight: 400
 
         .apartments-info-apart_roof
@@ -933,8 +941,10 @@ $OptimaCyr: "Optima Cyr", sans-serif
 
   .developer-right-info-item
     margin-left: 0 !important
-    width: 180px !important
     margin-right: 20px !important
+
+    &:last-child
+      width: 150px !important
 
   .developer-right-info-text
     width: auto !important
@@ -950,11 +960,21 @@ $OptimaCyr: "Optima Cyr", sans-serif
 
 @media screen and (max-width: 1280px)
 
+  .header
+    margin-top: 12px !important
+
+  .appartments-text
+    font-size: calc(40px + (52 - 40) * ((100vw - 1024px) / (1280 - 1024))) !important
+    margin-top: calc(109px + (126 - 109) * ((100vw - 1024px) / (1280 - 1024))) !important
+
+  .choose-link-img
+    border: 0 !important
+
+  .header-logo
+    width: calc(109px + (126 - 109) * ((100vw - 1280px) / (1920 - 1280))) !important
+
   .choose
-    left: calc(547px + (668 - 547) * ((100vw - 1024px) / (1280 - 1024))) !important
-
-
-@media screen and (max-width: 1200px)
+    left: calc(524px + (668 - 524) * ((100vw - 1024px) / (1280 - 1024))) !important
 
   .contact-number
     margin-right: 40px !important
@@ -965,6 +985,119 @@ $OptimaCyr: "Optima Cyr", sans-serif
   .mobile-menu-btn
     display: flex !important
 
+  .info-first
+    width: calc(547px + (644 - 547) * ((100vw - 1024px) / (1280 - 1024))) !important
+
+  .info-second
+    width: calc(291px + (360 - 291) * ((100vw - 1024px) / (1280 - 1024))) !important
+
+  .developer-right_title
+    font-size: 24px !important
+
+  .developer-right-info-text
+    font-size: 15px !important
+    margin-right: 0 !important
+
+  .developer-right-info-item_text
+    font-size: 24px !important
+
+  .item_slash
+    font-size: 24px !important
+
+  .developer-right-info-item_down
+    font-size: 15px !important
+
+  .info-first_title
+    line-height: 48px !important
+    font-size: 40px !important
+
+  .developer-left_img
+    width: calc(291px + (360 - 291) * ((100vw - 1024px) / (1280 - 1024))) !important
+    height: calc(291px + (360 - 291) * ((100vw - 1024px) / (1280 - 1024))) !important
+
+  .footer-map-list-item
+    margin-right: calc(16px + (32 - 16) * ((100vw - 1024px) / (1280 - 1024))) !important
+
+
+
+@media screen and (max-width: 1024px)
+
+  .appartments-text
+    font-size: calc(40px + (52 - 40) * ((100vw - 768px) / (1024 - 768))) !important
+
+  .info-first_title
+    line-height: calc(42px + (48 - 42) * ((100vw - 768px) / (1024 - 768))) !important
+    font-size: calc(30px + (40 - 30) * ((100vw - 768px) / (1024 - 768))) !important
+
+  .info-first_title
+    margin-top: calc(40px + (65 - 40) * ((100vw - 768px) / (1024 - 768))) !important
+
+  .developer-left_img
+    width: calc(150px + (291 - 150) * ((100vw - 768px) / (1024 - 768))) !important
+    height: calc(150px + (291 - 150) * ((100vw - 768px) / (1024 - 768))) !important
+
+  .footer-map-list-item
+    margin-right: calc(24px + (16 - 24) * ((100vw - 768px) / (1024 - 768))) !important
+
+
+
+
+@media screen and (max-width: 1000px)
+  .footer-map
+    flex-direction: column !important
+
+  .footer-map-createEyeTronic
+    margin-top: 20px !important
+
+
+@media screen and (max-width: 768px) and (min-height: 1000px)
+
+  .appartments-text
+    margin-top: calc(83px + (154 - 83) * ((100vw - 375px) / (768 - 375))) !important
+
+
+@media screen and (max-width: 768px)
+
+  .header-contact
+    display: none !important
+
+  .choose
+    margin-top: 16px !important
+    left: 0 !important
+
+  .choose-link
+    margin-top: calc(32px + (42 - 32) * ((100vw - 375px) / (768 - 375))) !important
+
+  .info-block_container
+    flex-direction: column !important
+
+  .info-first
+    width: calc(252px + (487 - 252) * ((100vw - 375px) / (768 - 375))) !important
+
+  .info-second
+    position: relative !important
+    width: calc(252px + (487 - 252) * ((100vw - 375px) / (768 - 375))) !important
+    margin-top: 16px
+
+  .info-second_img
+    margin-left: calc(83px + (200 - 83) * ((100vw - 375px) / (768 - 375))) !important
+
+  .appartments-text
+    margin-top: calc(90px + (154 - 90) * ((100vw - 375px) / (768 - 375))) !important
+
+  .stepWork-container
+    align-items: center !important
+    justify-content: center !important
+    flex-direction: column !important
+
+  .stepWork-text
+    width: 148px !important
+    font-size: 14px !important
+    margin-left: 0 !important
+    margin-top: 12px !important
+
+  .footer-map-list
+    flex-wrap: wrap !important
 
 
 

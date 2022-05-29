@@ -129,13 +129,15 @@ const Main = () => {
                                 <li className='header-nav_item'><a className='nav-item_a' href="#">Коммерция</a></li>
                                 <li className='header-nav_item'><a className='nav-item_a' href="#">Контакты</a></li>
                             </nav>
-                            <section className='header-contact'>
-                                <nav className='header-contact_nav'>
-                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={vk} alt="vk"/></a>
-                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={inst} alt="instagram"/></a>
-                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={fb} alt="facebook"/></a>
-                                </nav>
-                                <a className='contact-number' href="#">+7 (905) 600-60-06</a>
+                            <section className='header-contact-container'>
+                                <section className='header-contact'>
+                                    <nav className='header-contact_nav'>
+                                        <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={vk} alt="vk"/></a>
+                                        <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={inst} alt="instagram"/></a>
+                                        <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={fb} alt="facebook"/></a>
+                                    </nav>
+                                    <a className='contact-number' href="#">+7 (905) 600-60-06</a>
+                                </section>
                                 <section onClick={openMenu} className='mobile-menu-btn'>
                                     <div className='mobile-menu-burger'></div>
                                 </section>
@@ -143,8 +145,10 @@ const Main = () => {
                         </header>
                         <section className='content'>
                             <section className='stepWork'>
-                                <img className='stepWork-img' src={tractor} alt="tractor"/>
-                                <span className='stepWork-text'>ХОД <br/> СТРОИТЕЛЬСТВА</span>
+                                <section className='stepWork-container'>
+                                    <img className='stepWork-img' src={tractor} alt="tractor"/>
+                                    <span className='stepWork-text'>ХОД СТРОИТЕЛЬСТВА</span>
+                                </section>
                             </section>
                             <section className='appartments'>
                                 <h1 className='appartments-text'>КВАРТИРЫ РЯДОМ <br/> С ПАРКОМ И ОЗЕРОМ <br/> ОТ 2,7 МЛН</h1>
@@ -190,13 +194,15 @@ const Main = () => {
                                 <li className='header-nav_item'><a className='nav-item_a' href="#">Коммерция</a></li>
                                 <li className='header-nav_item'><a className='nav-item_a' href="#">Контакты</a></li>
                             </nav>
-                            <section className='header-contact'>
-                                <nav className='header-contact_nav'>
-                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={vk} alt="vk"/></a>
-                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={inst} alt="instagram"/></a>
-                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={fb} alt="facebook"/></a>
-                                </nav>
-                                <a className='contact-number' href="#">+7 (905) 600-60-06</a>
+                            <section className='header-contact-container'>
+                                <section className='header-contact'>
+                                    <nav className='header-contact_nav'>
+                                        <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={vk} alt="vk"/></a>
+                                        <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={inst} alt="instagram"/></a>
+                                        <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={fb} alt="facebook"/></a>
+                                    </nav>
+                                    <a className='contact-number' href="#">+7 (905) 600-60-06</a>
+                                </section>
                                 <section onClick={openMenu} className='mobile-menu-btn'>
                                     <div className='mobile-menu-burger'></div>
                                 </section>
@@ -204,8 +210,10 @@ const Main = () => {
                         </header>
                         <section className='content'>
                             <section className='stepWork'>
-                                <img className='stepWork-img' src={tractor} alt="tractor"/>
-                                <span className='stepWork-text'>ХОД <br/> СТРОИТЕЛЬСТВА</span>
+                                <section className='stepWork-container'>
+                                    <img className='stepWork-img' src={tractor} alt="tractor"/>
+                                    <span className='stepWork-text'>ХОД СТРОИТЕЛЬСТВА</span>
+                                </section>
                             </section>
                             <section className='appartments'>
                                 <h1 className='appartments-text'>КВАРТИРЫ РЯДОМ <br/> С ПАРКОМ И ОЗЕРОМ <br/> ОТ 2,7 МЛН</h1>
