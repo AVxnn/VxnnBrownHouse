@@ -1,3 +1,4 @@
+@use 'sass:math'
 
 @font-face
   font-family: "Optima Cyr"
@@ -6,41 +7,61 @@
 $inter: "Inter", sans-serif
 $OptimaCyr: "Optima Cyr", sans-serif
 
+@function prc($pxOne, $pxTwo)
+  $result: math.div($pxOne, $pxTwo) * 100%
+  @return $result
+
+@function rem($px)
+  $result: math.div($px, 16) + rem
+  @return $result
+
+@function em($px)
+  $result: math.div($px, 16) + em
+  @return $result
+
+
+
+
 .container-help
+  width: 100%
+  overflow-x: hidden
   display: flex
   justify-content: center
 
 .container
-  width: 90%
+  width: calc(1152px + (1728 - 1152) * ((100vw - 1280px) / (1920 - 1280)))
 
 .background
-  overflow-x: hidden
-  overflow-y: hidden
   display: flex
   justify-content: center
   width: 100%
-  height: 1080px
+  height: 100vh
   font-family: $inter
   background-image: url("../../img/bg.png")
+  background-position: center
+  background-size: cover
 
   .header
     display: flex
     align-items: center
     justify-content: space-between
     width: 100%
-    height: 96px
+    height: calc(38px + (58 - 38) * ((100vw - 1280px) / (1920 - 1280)))
     margin-top: 18px
     animation: opacity 2s
 
+    a
+      font-size: 0
+
     .header-logo
-      width: 157px
-      height: 58px
+      width: calc(102px + (157 - 102) * ((100vw - 1280px) / (1920 - 1280)))
+      height: auto
 
     .header-nav
       display: flex
 
       .header-nav_item
-        margin-right: 32px
+        margin-right: calc(16px + (32 - 16) * ((100vw - 1280px) / (1920 - 1280)))
         font-weight: 400
         list-style: none
 
@@ -49,12 +70,12 @@ $OptimaCyr: "Optima Cyr", sans-serif
 
         .nav-item_a
           text-decoration: none
+          font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
           transition: all .15s ease-in-out
           border-bottom: 1px solid rgba(0, 0, 0, 0.0)
 
           &:hover
-            color: #eaeaea
-            border-bottom: 1px solid #eaeaea
+            color: #CC9268
 
     .header-contact
       display: flex
@@ -63,24 +84,61 @@ $OptimaCyr: "Optima Cyr", sans-serif
       .header-contact_nav
         display: flex
         justify-content: space-between
-        width: 128px
+        width: calc(88px + (128 - 88) * ((100vw - 1280px) / (1920 - 1280)))
         margin-right: 42px
 
         .contact-nav_a
           line-height: 0
 
           .contact-nav_img
+            width: calc(22px + (30 - 22) * ((100vw - 1280px) / (1920 - 1280)))
+
 
       .contact-number
         text-decoration: none
+        font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
         transition: all .15s ease-in-out
         border-bottom: 1px solid rgba(0, 0, 0, 0.0)
 
         &:hover
-          color: #eaeaea
-          border-bottom: 1px solid #eaeaea
+          color: #CC9268
+
+    .mobile-menu-btn
+      position: relative
+      justify-content: flex-end
+      align-items: center
+      width: 20px
+      display: none
+      background-color: rgba(0, 0, 0, 0)
+      height: 18px
+      cursor: pointer
+
+      .mobile-menu-burger
+        content: ''
+        background-color: #FFFFFF
+        width: 12px
+        height: 2px
+
+        &:after
+          content: ''
+          position: absolute
+          top: 0
+          right: 0
+          background-color: #FFFFFF
+          width: 20px
+          height: 2px
+
+        &:before
+          content: ''
+          position: absolute
+          bottom: 0
+          right: 0
+          background-color: #FFFFFF
+          width: 20px
+          height: 2px
 
   .content
+    position: relative
     margin-top: 32px
     display: flex
     flex-direction: column
@@ -99,37 +157,33 @@ $OptimaCyr: "Optima Cyr", sans-serif
         transition: all .1s ease-in-out
         cursor: pointer
 
-        &:hover
-          background-color: #e1e1e1
-          border-color: rgba(0, 0, 0, 0.5)
-
       .stepWork-text
-        font-size: 18px
+        font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
         line-height: 21.6px
         font-family: $OptimaCyr
         margin-left: 12px
-        width: 149px
+        width: auto
+        cursor: pointer
 
     .appartments
-      margin-top: 190px
-      width: 695px
       animation: leftSlide 1s
       
       .appartments-text
-        font-size: 64px
+        font-size: calc(52px + (64 - 52) * ((100vw - 1280px) / (1920 - 1280)))
         font-weight: 400
-        line-height: 76.8px
+        line-height: calc(62.4px + (76.4 - 62.4) * ((100vw - 1280px) / (1920 - 1280)))
         font-family: $OptimaCyr
-        margin-top: 32px
+        margin-top: calc(126px + (211 - 126) * ((100vw - 1280px) / (1920 - 1280)))
         display: flex
         flex-direction: column
 
     .choose
       display: flex
+      position: relative
       flex-direction: column
-      align-items: flex-end
-      width: 90%
-      margin-top: 122px
+      width: 410px
+      margin-top: calc(94px + (122 - 94) * ((100vw - 1280px) / (1920 - 1280)))
+      left: calc(668px + (1170 - 668) * ((100vw - 1280px) / (1920 - 1280)))
 
       .choose-container
         width: 410px
@@ -137,7 +191,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
       
         .choose-text
           width: 410px
-          font-size: 24px
+          font-size: calc(20px + (24 - 20) * ((100vw - 1280px) / (1920 - 1280)))
           line-height: 33.6px
 
         .choose-link
@@ -146,6 +200,10 @@ $OptimaCyr: "Optima Cyr", sans-serif
           margin-top: 32px
           cursor: pointer
 
+          &:hover > .choose-link-img
+            background-color: #CC9268
+            border-color: #CC9268
+
           .choose-link-img
             padding: 23px 17px
             border-radius: 500%
@@ -153,19 +211,19 @@ $OptimaCyr: "Optima Cyr", sans-serif
             background-color: #FFFFFF
             transition: all .1s ease-in-out
 
-            &:hover
-              background-color: #e1e1e1
-              border-color: rgba(0, 0, 0, 0.5)
-
           .choose-link-text
+            font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
             margin-left: 16px
 
+  .down
+    position: absolute
+    height: 45px
+    bottom: calc(32px + (48 - 32) * ((100vw - 1280px) / (1920 - 1280)))
 
     .arrowDown
       display: flex
-      margin-top: 70px
       justify-content: center
-      width: 100%
+      width: 90vw
       animation: opacity 1s
 
       .arrowDown-img
@@ -174,15 +232,20 @@ $OptimaCyr: "Optima Cyr", sans-serif
 
     .slider-numbers
       position: relative
-      top: -135px
-      right: 30px
-      transform: rotate(-90deg)
-      width: 75px
+      width: 34px
+      bottom: calc(110px + (130 - 110) * ((100vw - 1280px) / (1920 - 1280)))
       animation: opacity 1s
 
-      .slider-number-span
-        font-family: $OptimaCyr
-        font-size: 24px
+      .slider-numbers-container
+        position: relative
+        left: -24px
+        width: 74px
+        height: 34px
+        transform: rotate(-90deg)
+
+        .slider-number-span
+          font-family: $OptimaCyr
+          font-size: calc(18px + (24 - 18) * ((100vw - 1280px) / (1920 - 1280)))
 
     .slider-pin
       position: relative
@@ -213,7 +276,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
   flex-direction: row
   justify-content: center
   width: 100%
-  height: 1080px
+  margin-bottom: 140px
   font-family: $inter
 
   .info-block_container
@@ -223,138 +286,143 @@ $OptimaCyr: "Optima Cyr", sans-serif
     margin-top: 184px
   
     .info-first
-      width: 853px
+      width: calc(644px + (853 - 644) * ((100vw - 1280px) / (1920 - 1280)))
+      margin-right: calc(115px + (311 - 115) * ((100vw - 1280px) / (1920 - 1280)))
 
       .info-first_img
-        width: 853px
-        height: 526px
+        width: calc(644px + (853 - 644) * ((100vw - 1280px) / (1920 - 1280)))
 
       .info-first_title
-        font-size: 52px
+        font-size: calc(40px + (52 - 40) * ((100vw - 1280px) / (1920 - 1280)))
         font-family: $OptimaCyr
         width: 524px
-        margin-top: 96px
+        margin-top: calc(74px + (96 - 74) * ((100vw - 1280px) / (1920 - 1280)))
         color: #412923
 
     .info-second
-      width: 563px
+      width: calc(360px + (563 - 360) * ((100vw - 1280px) / (1920 - 1280)))
 
       .info-second_text
-        margin-bottom: 66px
+        margin-bottom: calc(50px + (66 - 50) * ((100vw - 1280px) / (1920 - 1280)))
+        font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
         color: #412923
 
       .info-second_img
+        width: calc(360px + (563 - 360) * ((100vw - 1280px) / (1920 - 1280)))
 
 
-
-.seven-problems
-  margin-top: 60px
-  position: relative
-  width: 518px
-  left: 30%
-
-  .right-block_seven
-    font-family: $OptimaCyr
-    color: #CC9268
-    font-size: 104px
-
-  .right-block_title
-    font-family: $OptimaCyr
-    color: #412923
-    font-size: 52px
-    font-weight: 400
-    margin-bottom: 64px
-
-.slider-block
-  font-family: $inter
+.seven-problems-block
+  width: 100%
   display: flex
-  justify-content: space-between
-  margin-bottom: 100px
+  align-items: flex-end
+  flex-direction: column
 
-
-  .left-block
+  .seven-problems
+    margin-top: 60px
     position: relative
-    width: 418px
-    height: 718px
+    width: calc(645px + (1145 - 645) * ((100vw - 1280px) / (1920 - 1280)))
 
-    .left-block_title
+    .right-block_seven
       font-family: $OptimaCyr
-      color: #A19B8E
-      font-size: 30px
-      margin-bottom: 24px
+      color: #CC9268
+      font-size: calc(80px + (104 - 80) * ((100vw - 1280px) / (1920 - 1280)))
 
-    .left-block_paragraph
+    .right-block_title
+      font-family: $OptimaCyr
       color: #412923
+      font-size: calc(40px + (52 - 40) * ((100vw - 1280px) / (1920 - 1280)))
+      font-weight: 400
+      margin-bottom: calc(56px + (64 - 56) * ((100vw - 1280px) / (1920 - 1280)))
 
-    .left-block-slider-count
-      transform: rotate(-90deg)
-      position: absolute
-      bottom: 30px
-      right: -20px
+  .slider-block
+    font-family: $inter
+    display: flex
+    width: 100%
+    justify-content: space-between
 
-      .left-block-slider-count_text
-        font-family: $OptimaCyr
-        font-size: 30px
-        color: #A19B8E
-
-
-    .left-block-slider-buttons
-      position: absolute
-      bottom: 0
-
-      .slider-btn
-        padding: 23px 18px
-        border: 1px solid #E9E6E0
-        border-radius: 500%
-        cursor: pointer
-        transition: all .1s ease-in-out
-
-        &:hover
-          background-color: #e1e1e1
-
-      .left-block-slider-buttons-left
-        transform: rotate(180deg)
-        margin-right: 36px
-
-      .left-block-slider-buttons-right
-
-
-  .right-block
-    overflow: hidden
-    width: 1201px
-
-    .right-block-slider
+    .left-block
       position: relative
-      width: calc(437px * 7)
+      width: calc(359px + (418 - 359) * ((100vw - 1280px) / (1920 - 1280)))
+      height: calc(619px + (718 - 619) * ((100vw - 1280px) / (1920 - 1280)))
 
-      .right-block-slider-item
-        position: relative
-        width: 417px
-        height: 718px
-        margin-right: 20px
+      .left-block_title
+        font-family: $OptimaCyr
+        color: #A19B8E
+        font-size: calc(24px + (30 - 24) * ((100vw - 1280px) / (1920 - 1280)))
+        margin-bottom: 24px
+
+      .left-block_paragraph
+        color: #412923
+        font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
+
+      .left-block-slider-count
+        transform: rotate(-90deg)
+        position: absolute
+        bottom: 30px
+        right: -20px
+
+        .left-block-slider-count_text
+          font-family: $OptimaCyr
+          font-size: 30px
+          color: #A19B8E
+
+
+      .left-block-slider-buttons
+        position: absolute
+        bottom: 0
+
+        .slider-btn
+          padding: 23px 18px
+          border: 1px solid #E9E6E0
+          border-radius: 500%
+          cursor: pointer
+          transition: all .1s ease-in-out
+
+          &:hover
+            background-color: #e1e1e1
+
+        .left-block-slider-buttons-left
+          transform: rotate(180deg)
+          margin-right: 36px
+
+
+    .right-block
+      position: relative
+      width: calc(645px + (1145 - 645) * ((100vw - 1280px) / (1920 - 1280)))
+
+      .right-block-slider
+        position: absolute
+        width: calc(437px * 7)
+
+        .right-block-slider-item
+          position: relative
+          width: calc(360px + (417 - 360) * ((100vw - 1280px) / (1920 - 1280)))
+          height: calc(619px + (718 - 619) * ((100vw - 1280px) / (1920 - 1280)))
+          margin-right: 20px
 
 
 .developer
   width: 100%
   display: flex
   align-items: center
-  margin: 176px 0
+  margin: calc(152px + (184 - 152) * ((100vw - 1280px) / (1920 - 1280))) 0
   font-family: $inter
 
   .developer-left
-    margin-right: 166px
+    margin-right: calc(115px + (166 - 115) * ((100vw - 1280px) / (1920 - 1280)))
 
     .developer-left_img
-      width: 417px
-      height: 417px
+      width: calc(360px + (417 - 360) * ((100vw - 1280px) / (1920 - 1280)))
+      height: calc(360px + (417 - 360) * ((100vw - 1280px) / (1920 - 1280)))
 
   .developer-right
     display: flex
+    width: 1000px
     flex-direction: column
 
     .developer-right_title
       font-family: $OptimaCyr
-      font-size: 30px
+      font-size: calc(24px + (30 - 24) * ((100vw - 1280px) / (1920 - 1280)))
       margin-bottom: 32px
       color: #412923
 
@@ -362,38 +430,47 @@ $OptimaCyr: "Optima Cyr", sans-serif
       display: flex
 
       .developer-right-info-text
-        font-size: 18px
+        font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
         color: #412923
+        width: 524px
         margin-right: 20px
 
-      .developer-right-info-item
+      .developer-right-container
         display: flex
-        flex-direction: column
-        align-items: flex-start
-        margin-left: 45px
 
-        .developer-right-info-item_text
-          font-family: $OptimaCyr
-          margin-bottom: 8px
-          font-size: 30px
-          color: #412923
+        .developer-right-info-item
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+          width: 100px
+          margin-left: 45px
 
-          .item_slash
+          .developer-right-info-item_text
             font-family: $OptimaCyr
-            font-size: 30px
-            color: #CC9268
+            margin-bottom: 8px
+            font-size: calc(24px + (30 - 24) * ((100vw - 1280px) / (1920 - 1280)))
+            color: #412923
 
-        .developer-right-info-item_down
-          margin-left: 18px
-          color: #412923
+            .item_slash
+              font-family: $OptimaCyr
+              font-size: calc(24px + (30 - 24) * ((100vw - 1280px) / (1920 - 1280)))
+              color: #CC9268
+
+          .developer-right-info-item_down
+            margin-left: 18px
+            width: 200px
+            font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
+            color: #412923
 
 
 
 .map-background
   position: relative
   width: 100%
-  height: 1080px
+  height: 100vh
   background-image: url('../../img/Map.png')
+  background-position: center
+  background-size: cover
   display: flex
   justify-content: center
 
@@ -403,15 +480,20 @@ $OptimaCyr: "Optima Cyr", sans-serif
 
 
   .map-nav
+    width: 400px
 
     .map-nav-item
       list-style: none
       margin-bottom: 16px
+      width: auto
       font-family: $OptimaCyr
-      font-size: 24px
+      font-size: calc(18px + (24 - 18) * ((100vw - 1280px) / (1920 - 1280)))
       font-weight: 400
       color: #FFFFFF
       cursor: pointer
+
+      &:hover
+        color: #CC9268
 
 
   .map-bottom
@@ -422,20 +504,20 @@ $OptimaCyr: "Optima Cyr", sans-serif
       display: flex
       flex-direction: column
       font-family: $OptimaCyr
-      font-size: 48px
+      font-size: calc(32px + (48 - 32) * ((100vw - 1280px) / (1920 - 1280)))
       font-weight: 400
       color: #FFFFFF
 
       .map-bottom-title_gold
         font-family: $OptimaCyr
-        font-size: 64px
+        font-size: calc(52px + (64 - 52) * ((100vw - 1280px) / (1920 - 1280)))
         color: #CC9268
 
 
 
 .news
   width: 100%
-  margin: 186px 0
+  margin: calc(158px + (186 - 158) * ((100vw - 1280px) / (1920 - 1280))) 0
   font-family: $inter
 
   .news-header
@@ -446,7 +528,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
     .news-header-title
       font-family: $OptimaCyr
       font-weight: 400
-      font-size: 52px
+      font-size: calc(40px + (52 - 40) * ((100vw - 1280px) / (1920 - 1280)))
       color: #412923
 
     .news-header-tool
@@ -462,7 +544,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
         transition: all .1s ease-in-out
 
         &:hover
-          background-color: #e1e1e1
+          background-color: #CC9268
 
       .news-header-tool-buttons-right
         padding: 23px 18px
@@ -472,37 +554,45 @@ $OptimaCyr: "Optima Cyr", sans-serif
         transition: all .1s ease-in-out
 
         &:hover
-          background-color: #e1e1e1
+          background-color: #CC9268
 
   .news-info
     display: flex
-    margin-top: 64px
+    margin-top: calc(24px + (64 - 24) * ((100vw - 1280px) / (1920 - 1280)))
     justify-content: space-between
 
     .news-info-item
       display: flex
       flex-direction: column
-      padding: 48px 40px
+      padding: calc(40px + (48 - 40) * ((100vw - 1280px) / (1920 - 1280))) calc(24px + (40 - 24) * ((100vw - 1280px) / (1920 - 1280)))
       width: 467px
+      margin-right: 20px
       height: 155px
       border: 1px solid #E9E6E0
+      cursor: pointer
+
+      &:hover
+        border-color: #CC9268
+
+      &:last-child
+        margin-right: 0
 
       .news-info-time
-        font-size: 15px
+        font-size: calc(13px + (15 - 13) * ((100vw - 1280px) / (1920 - 1280)))
         font-weight: 400
         margin-bottom: 24px
         color: #A19B8E
 
       .news-info-item-title
         font-family: $OptimaCyr
-        font-size: 24px
+        font-size: calc(18px + (24 - 18) * ((100vw - 1280px) / (1920 - 1280)))
         font-weight: 400
         margin-bottom: 8px
         color: #CC9268
 
       .news-info-item-description
         font-weight: 400
-        font-size: 15px
+        font-size: calc(13px + (15 - 13) * ((100vw - 1280px) / (1920 - 1280)))
         color: #412923
 
 
@@ -518,7 +608,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
     align-items: flex-end
 
     .apartments-header-title
-      font-size: 52px
+      font-size: calc(40px + (52 - 40) * ((100vw - 1280px) / (1920 - 1280)))
       color: #412923
       font-weight: 400
       font-family: $OptimaCyr
@@ -526,57 +616,73 @@ $OptimaCyr: "Optima Cyr", sans-serif
     .apartments-header-tool
       display: flex
       align-items: center
+      cursor: pointer
+
+      &:hover > .apartments-header-tool-buttons-right
+        background-color: #CC9268
 
       .apartments-header-tool-buttons-right
         padding: 23px 18px
         border: 1px solid #E9E6E0
         border-radius: 500%
-        cursor: pointer
         transition: all .1s ease-in-out
         margin-right: 16px
 
-        &:hover
-          background-color: #e1e1e1
 
       .apartments-header-tool-text
-        font-size: 24px
+        font-size: calc(20px + (24 - 20) * ((100vw - 1280px) / (1920 - 1280)))
         color: #412923
         font-weight: 400
         font-family: $OptimaCyr
 
   .apartments-info
     display: flex
-    margin-top: 64px
+    margin-top: calc(24px + (64 - 24) * ((100vw - 1280px) / (1920 - 1280)))
+    flex-wrap: wrap
 
     .apartments-info-item
       display: flex
       flex-direction: column
       align-items: center
-      width: 417px
+      width: calc(291px + (417 - 291) * ((100vw - 1280px) / (1920 - 1280)))
       height: 564px
       border-bottom: 1px solid #E9E6E0
       margin-right: 20px
+      cursor: pointer
 
-      .apartments-info-img
-        padding: 55px 85px
-        width: 247px
-        height: 337.28px
-        margin-bottom: 8px
+      &:last-child
+        margin-right: 0
+
+      .apartments-info-container-img
+        display: flex
+        justify-content: center
+        align-items: center
+        width: calc(360px + (417 - 360) * ((100vw - 1280px) / (1920 - 1280)))
+        height: calc(387px + (448 - 387) * ((100vw - 1280px) / (1920 - 1280)))
+
+        .apartments-info-img
+          width: calc(213px + (247 - 213) * ((100vw - 1280px) / (1920 - 1280)))
+          height: calc(290px + (337 - 290) * ((100vw - 1280px) / (1920 - 1280)))
+          margin-bottom: 8px
+          transition: all 0.3s ease-in-out
+
+          &:hover
+            transform: scale(1.1)
 
       .apartments-info-price
-        font-size: 30px
+        font-size: calc(24px + (30 - 24) * ((100vw - 1280px) / (1920 - 1280)))
         color: #412923
         font-weight: 400
         margin-bottom: 8px
         font-family: $OptimaCyr
 
       .apartments-info-apart
-        font-size: 18px
+        font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
         color: #412923
         font-weight: 400
 
         .apartments-info-apart_roof
-          font-size: 18px
+          font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
           color: #A19B8E
           font-weight: 400
 
@@ -585,73 +691,76 @@ $OptimaCyr: "Optima Cyr", sans-serif
 
 .footer
   width: 100%
-  height: 520px
   background-color: #412923
   display: flex
   justify-content: center
   font-family: $inter
 
   .footer-top
-    margin: 80px 0 88px 0
+    margin: calc(48px + (80 - 48) * ((100vw - 1280px) / (1920 - 1280))) 0 calc(64px + (88 - 64) * ((100vw - 1280px) / (1920 - 1280))) 0
     display: flex
     justify-content: space-between
 
-    .footer-top-left
-
     .footer-top-left-title
-      font-size: 52px
+      font-size: calc(40px + (52 - 40) * ((100vw - 1280px) / (1920 - 1280)))
       color: #E9E6E0
       font-weight: 400
-      margin-bottom: 40px
+      margin-bottom: calc(28px + (40 - 28) * ((100vw - 1280px) / (1920 - 1280)))
       font-family: $OptimaCyr
 
     .footer-top-left-btn
       display: flex
+      width: calc(250px + (310 - 250) * ((100vw - 1280px) / (1920 - 1280)))
       align-items: center
+      cursor: pointer
+
+      &:hover > .footer-top-left-btn_img
+        background-color: #CC9268
 
       .footer-top-left-btn_img
         padding: 17px
         border-radius: 500%
         margin-right: 16px
-        background-color: #CC9268
+        background-color: #FFFFFF
         cursor: pointer
 
-        &:hover
-          background-color: #a27454
-
       .footer-top-left-btn_text
+        font-size: calc(18px + (24 - 18) * ((100vw - 1280px) / (1920 - 1280)))
 
   .footer-top-right
     display: flex
     flex-direction: column
+    align-items: flex-end
+    height: calc(95px + (126 - 95) * ((100vw - 1280px) / (1920 - 1280)))
     justify-content: space-between
 
     .footer-top-right-number
-      font-size: 18px
+      font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
       color: #E9E6E0
       text-decoration: none
       font-weight: 400
 
       &:hover
-        color: #eaeaea
-        border-bottom: 1px solid #eaeaea
+        color: #CC9268
 
     .footer-top-right-site
-      font-size: 18px
+      font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
       color: #E9E6E0
       text-decoration: none
       font-weight: 400
 
       &:hover
-        color: #eaeaea
-        border-bottom: 1px solid #eaeaea
+        color: #CC9268
 
     .footer-top-right-contacts
       display: flex
+      width: calc(113px + (124 - 113) * ((100vw - 1280px) / (1920 - 1280)))
       justify-content: flex-end
 
       .footer-top-right-contacts-item
         margin-left: 19px
+        width: calc(21px + (28 - 21) * ((100vw - 1280px) / (1920 - 1280)))
+        height: calc(21px + (28 - 21) * ((100vw - 1280px) / (1920 - 1280)))
         cursor: pointer
 
 
@@ -671,101 +780,204 @@ $OptimaCyr: "Optima Cyr", sans-serif
         margin-right: 32px
 
         a
+          font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
           text-decoration: none
 
           &:hover
-            color: #eaeaea
-            border-bottom: 1px solid #eaeaea
+            color: #CC9268
 
     .footer-map-createEyeTronic
-      font-size: 18px
+      font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
       color: #A29B8E
       font-weight: 400
-      cursor: pointer
 
       .footer-map-createEyeTronic_style
+        font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
+        cursor: pointer
 
         &:hover
-          border-bottom: 1px solid #eaeaea
+          color: #CC9268
 
 
   .footer-map-last-info
-    margin-top: 32px
+    margin: calc(24px + (32 - 24) * ((100vw - 1280px) / (1920 - 1280))) 0
 
     .footer-map-last-info-text
-      font-size: 15px
+      font-size: calc(11px + (15 - 11) * ((100vw - 1280px) / (1920 - 1280)))
       color: #A19B8E
       font-weight: 400
 
 
 
-@media screen and (max-width: 1440px)
-  .header
-    .header-logo
-      width: 102px !important
-      height: 38px !important
 
-    .header-nav
-      .header-nav_item
+.mobile-menu
+  position: fixed
+  width: 100%
+  height: 100vh
+  background-color: #E9E6E0
+  opacity: 0
+  font-family: $inter
+  z-index: 2
+  transition: opacity 2s ease-in-out
+  animation: opacity 0.5s ease-in-out
+
+  .mobule-menu-container
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    height: 100vh
+    width: calc(1152px + (1728 - 1152) * ((100vw - 1280px) / (1920 - 1280)))
+
+    .mobile-menu-header
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      height: 100px
+
+      .mobile-menu-logo
+
+      .mobile-menu-container-close
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 50px
+        height: 50px
+        cursor: pointer
+
+        .mobile-menu-close
+          content: ''
+          background-color: #412923
+          transform: rotate(45deg)
+          width: 20px
+          height: 2px
+
+          &:after
+            content: ''
+            position: absolute
+            transform: rotate(-90deg)
+            top: 0
+            right: 0
+            background-color: #412923
+            width: 20px
+            height: 2px
+
+    .mobile-menu-nav
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+      height: 430px
+
+      .mobile-menu-nav_item
+        list-style: none
+
         .nav-item_a
-          font-size: 15px
+          color: #412923
+          font-size: 24px
+          font-family: $OptimaCyr
+          text-transform: uppercase
+          text-decoration: none
 
-    .header-contact
-      .header-contact_nav
-        width: 88px !important
-        .contact-nav_a
-          .contact-nav_img
-            width: 22px
-            height: 22px
+          &:hover
+            color: #CC9268
 
-      .contact-number
+    .mobile-menu-footer
+      width: 100%
+      display: flex
+      height: 100px
+      align-items: center
+      justify-content: space-between
+
+      .mobile-menu-number
         font-size: 15px
+        color: #412923
+        text-decoration: none
 
-  .content
+        &:hover
+          color: #CC9268
 
-    .stepWork
+      .mobile-menu-contact_nav
+        width: 118px
+        display: flex
+        justify-content: space-between
 
-      .stepWork-img
+        .mobile-menu-contact-nav_a
 
-      .stepWork-text
-        font-size: 15px !important
+          .mobile-menu-contact-nav_img
 
-    .appartments
+      .footer-top-right-site
+        font-size: 15px
+        text-decoration: none
+        color: #412923
 
-
-      .appartments-text
-        font-size: 52px !important
-
-    .choose
-
-      .choose-container
-        width: 320px !important
-
-        .choose-text
-          font-size: 20px !important
-
-        .choose-link
-
-          .choose-link-img
-
-          .choose-link-text
-
-    .arrowDown
-
-      .arrowDown-img
-
-    .slider-numbers
-
-      .slider-number-span
-
-    .slider-pin
-
-      .slider-pin-item
-
-      .slider-pin-item_active
+        &:hover
+          color: #CC9268
 
 
-        
+@media screen and (max-width: 1919px)
+
+  .apartments-info
+    justify-content: space-between !important
+
+  .apartments-info-item
+
+
+    &:last-child
+      display: none !important
+
+
+
+@media screen and (max-width: 1780px)
+
+  .developer-right-info
+    flex-direction: column !important
+
+  .developer-right-container
+    justify-content: space-between
+    width: 100% !important
+    margin-top: 24px !important
+    margin-left: 0 !important
+
+  .developer-right-info-item
+    margin-left: 0 !important
+    width: 180px !important
+    margin-right: 20px !important
+
+  .developer-right-info-text
+    width: auto !important
+
+  .developer-right-info-item_down
+    width: 100% !important
+
+  .developer-right
+    max-width: 900px !important
+    width: 100% !important
+
+
+
+@media screen and (max-width: 1280px)
+
+  .choose
+    left: calc(547px + (668 - 547) * ((100vw - 1024px) / (1280 - 1024))) !important
+
+
+@media screen and (max-width: 1200px)
+
+  .contact-number
+    margin-right: 40px !important
+
+  .header-nav
+    display: none !important
+
+  .mobile-menu-btn
+    display: flex !important
+
+
+
+
 @keyframes opacity
   0%
     opacity: 0

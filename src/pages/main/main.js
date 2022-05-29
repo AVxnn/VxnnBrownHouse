@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from '../../img/logo.png'
+import logoBlack from '../../img/logo-black.png'
 import fb from '../../img/fb.png'
+import bgg from '../../img/bg.png'
+import bg1 from '../../img/bg1.png'
+import bg2 from '../../img/bg2.png'
 import vk from '../../img/vk.png'
 import inst from '../../img/inst.png'
+import fbb from '../../img/fbb.png'
+import vkb from '../../img/vkb.png'
+import instb from '../../img/instb.png'
 import tractor from '../../img/tractor.png'
 import arrow from '../../img/arrow.png'
 import arrowDown from '../../img/arrowDown.png'
@@ -13,14 +20,55 @@ import children from '../../img/children.png'
 import weed from '../../img/weed.png'
 import akademia from '../../img/akadimia.png'
 import apartaments from '../../img/appartaments.png'
+import apartaments1 from '../../img/apartaments1.png'
+import apartaments2 from '../../img/apartaments2.png'
 import message from '../../img/message.png'
 
 import './style.css'
 
 const Main = () => {
+
+    const [open, setOpen] = useState(false)
+
+    const openMenu = () => {
+        open ? setOpen(false) : setOpen(true)
+    }
+
     return (
         <>
-            <section className='background'>
+            {open ? (
+                    <section className='mobile-menu' style={open ? {opacity: 1} : {opacity: 0}}>
+                        <section className='container-help'>
+                            <section className='mobule-menu-container'>
+                                <section className='mobile-menu-header'>
+                                    <a href="#"><img className='mobile-menu-logo' src={logoBlack} alt="Braun House Family"/></a>
+                                    <section onClick={openMenu} className='mobile-menu-container-close'>
+                                        <div className='mobile-menu-close'></div>
+                                    </section>
+                                </section>
+                                <nav className='mobile-menu-nav'>
+                                    <li className='mobile-menu-nav_item'><a className='nav-item_a' href="#">Квартиры</a></li>
+                                    <li className='mobile-menu-nav_item'><a className='nav-item_a' href="#">Как купить</a></li>
+                                    <li className='mobile-menu-nav_item'><a className='nav-item_a' href="#">Ход строительства</a></li>
+                                    <li className='mobile-menu-nav_item'><a className='nav-item_a' href="#">Документы</a></li>
+                                    <li className='mobile-menu-nav_item'><a className='nav-item_a' href="#">Новости</a></li>
+                                    <li className='mobile-menu-nav_item'><a className='nav-item_a' href="#">Коммерция</a></li>
+                                    <li className='mobile-menu-nav_item'><a className='nav-item_a' href="#">Контакты</a></li>
+                                </nav>
+                                <section className='mobile-menu-footer'>
+                                    <a className='mobile-menu-number' href="#">+7 (905) 600-60-06</a>
+                                    <nav className='mobile-menu-contact_nav'>
+                                        <a className='mobile-menu-contact-nav_a' href="#"><img className='mobile-menu-contact-nav_img' src={vkb} alt="vk"/></a>
+                                        <a className='mobile-menu-contact-nav_a' href="#"><img className='mobile-menu-contact-nav_img' src={instb} alt="instagram"/></a>
+                                        <a className='mobile-menu-contact-nav_a' href="#"><img className='mobile-menu-contact-nav_img' src={fbb} alt="facebook"/></a>
+                                    </nav>
+                                    <a className='footer-top-right-site' href="#">info@brownhouse.ru</a>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+            ) : null }
+            <section className='background' >
                 <section className='container'>
                     <header className='header'>
                         <a href="#"><img className='header-logo' src={logo} alt="Braun House Family"/></a>
@@ -40,30 +88,37 @@ const Main = () => {
                                 <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={fb} alt="facebook"/></a>
                             </nav>
                             <a className='contact-number' href="#">+7 (905) 600-60-06</a>
+                            <section onClick={openMenu} className='mobile-menu-btn'>
+                                <div className='mobile-menu-burger'></div>
+                            </section>
                         </section>
                     </header>
                     <section className='content'>
                         <section className='stepWork'>
                             <img className='stepWork-img' src={tractor} alt="tractor"/>
-                            <span className='stepWork-text'>ХОД СТРОИТЕЛЬСТВА</span>
+                            <span className='stepWork-text'>ХОД <br/> СТРОИТЕЛЬСТВА</span>
                         </section>
                         <section className='appartments'>
-                            <h1 className='appartments-text'>КВАРТИРЫ РЯДОМ С ПАРКОМ И ОЗЕРОМ ОТ 2,7 МЛН</h1>
+                            <h1 className='appartments-text'>КВАРТИРЫ РЯДОМ <br/> С ПАРКОМ И ОЗЕРОМ <br/> ОТ 2,7 МЛН</h1>
                         </section>
                         <section className='choose'>
                             <section className='choose-container'>
-                                <span className='choose-text'>Всего 96 квартир от 24 — 64м² Сдача в 4 кв. 2022</span>
+                                <span className='choose-text'>Всего 96 квартир от 24 — 64м² <br/> Сдача в 4 кв. 2022</span>
                                 <section className='choose-link'>
                                     <img className='choose-link-img' src={arrow} alt="arrow"/>
-                                    <span className='choose-link-text'>ХОД СТРОИТЕЛЬСТВА</span>
+                                    <span className='choose-link-text'>Выбрать квартиру</span>
                                 </section>
                             </section>
                         </section>
+                    </section>
+                    <section className='down'>
                         <section className='arrowDown'>
                             <img className='arrowDown-img' src={arrowDown} alt="Стрелка вниз"/>
                         </section>
                         <section className='slider-numbers'>
-                            <span className='slider-number-span'>01 / 03</span>
+                            <section className='slider-numbers-container'>
+                                <span className='slider-number-span'>01 / 03</span>
+                            </section>
                         </section>
                         <section className='slider-pin'>
                             <li className='slider-pin-item'></li>
@@ -80,40 +135,43 @@ const Main = () => {
                         <section className='info-block_container'>
                             <section className='info-first'>
                                 <img className='info-first_img' src={house} alt="Дом для комфортной жизни"/>
-                                <h3 className='info-first_title'>ДОМ <br/> ДЛЯ КОМФОРТНОЙ ЖИЗНИ</h3>
+                                <h3 className='info-first_title'>ДОМ <br/> ДЛЯ КОМФОРТНОЙ <br/> ЖИЗНИ</h3>
                             </section>
                             <section className='info-second'>
-                                <p className='info-second_text'>Браун Хаус Family — семейный жилой комплекс повышенной <br/> комфортности. Созданный ГК «Академия» проект — <br/> идеальный баланс трех составляющих удобного жилого <br/> пространства. <br/>
-                                    Обжитая зеленая локация с озером, парком и необходимой <br/> инфраструктурой. Здание с современным оборудованием <br/> и безопасный закрытый двор. Плюс — просторные <br/> планировки с кухнями-гостиными.</p>
+                                <p className='info-second_text'>Браун Хаус Family — семейный жилой комплекс повышенной комфортности. Созданный ГК «Академия» проект — идеальный баланс трех составляющих удобного жилого пространства. <br/>
+                                    Обжитая зеленая локация с озером, парком и необходимой инфраструктурой. Здание с современным оборудованием и безопасный закрытый двор. Плюс — просторные планировки с кухнями-гостиными.</p>
                                 <img className='info-second_img' src={park} alt="Дом для комфортной жизни"/>
                             </section>
                         </section>
                     </section>
                 </section>
             </section>
-            <section className='container-help'>
-                <section className='container'>
-                    <section className='seven-problems'>
-                        <h4 className='right-block_seven'>7</h4>
-                        <h4 className='right-block_title'>ПРИЧИН КУПИТЬ <br/> ЗДЕСЬ КВАРТИРУ</h4>
-                    </section>
-                    <section className='slider-block'>
-                        <section className='left-block'>
-                            <h4 className='left-block_title'>РЯДОМ - РЕКА, ОЗЕРО <br/> И НЕСКОЛЬКО ПАРКОВ</h4>
-                            <p className='left-block_paragraph'>В 200 метрах от комплекса расположено <br/> озеро со сквером и Летним театром, где <br/> проводятся праздничные мероприятия. <br/> На таком же удалении протекает река Охта, <br/> а через дорогу находится крупный зеленый <br/> массив — Капральев парк, где оборудованы <br/> прогулочные тропинки и зоны для барбекю. <br/> Экологически чистая местность располагает <br/> к прогулкам на свежем воздухе, семейным <br/> пикникам и тренировкам.</p>
-                            <section className='left-block-slider-buttons'>
-                                <img className='left-block-slider-buttons-left slider-btn' src={arrow} alt="arrow"/>
-                                <img className='left-block-slider-buttons-right slider-btn' src={arrow} alt="arrow"/>
-                            </section>
-                            <section className='left-block-slider-count'>
-                                <span className='left-block-slider-count_text'>01 / 07</span>
-                            </section>
+
+                <section className='container-help'>
+                    <section className='container'>
+                        <section className='seven-problems-block'>
+                        <section className='seven-problems'>
+                            <h4 className='right-block_seven'>7</h4>
+                            <h4 className='right-block_title'>ПРИЧИН КУПИТЬ <br/> ЗДЕСЬ КВАРТИРУ</h4>
                         </section>
-                        <section className='right-block'>
-                            <section className='right-block-slider'>
-                                <img className='right-block-slider-item' src={people} alt="people"/>
-                                <img className='right-block-slider-item' src={children} alt="children"/>
-                                <img className='right-block-slider-item' src={weed} alt="weed"/>
+                        <section className='slider-block'>
+                            <section className='left-block'>
+                                <h4 className='left-block_title'>РЯДОМ - РЕКА, ОЗЕРО <br/> И НЕСКОЛЬКО ПАРКОВ</h4>
+                                <p className='left-block_paragraph'>В 200 метрах от комплекса расположено <br/> озеро со сквером и Летним театром, где <br/> проводятся праздничные мероприятия. <br/> На таком же удалении протекает река Охта, <br/> а через дорогу находится крупный зеленый <br/> массив — Капральев парк, где оборудованы <br/> прогулочные тропинки и зоны для барбекю. <br/> Экологически чистая местность располагает <br/> к прогулкам на свежем воздухе, семейным <br/> пикникам и тренировкам.</p>
+                                <section className='left-block-slider-buttons'>
+                                    <img className='left-block-slider-buttons-left slider-btn' src={arrow} alt="arrow"/>
+                                    <img className='left-block-slider-buttons-right slider-btn' src={arrow} alt="arrow"/>
+                                </section>
+                                <section className='left-block-slider-count'>
+                                    <span className='left-block-slider-count_text'>01 / 07</span>
+                                </section>
+                            </section>
+                            <section className='right-block'>
+                                <section className='right-block-slider'>
+                                    <img className='right-block-slider-item' src={people} alt="people"/>
+                                    <img className='right-block-slider-item' src={children} alt="children"/>
+                                    <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                </section>
                             </section>
                         </section>
                     </section>
@@ -128,25 +186,27 @@ const Main = () => {
                         <section className='developer-right'>
                             <h4 className='developer-right_title'>НАДЕЖНЫЙ ЗАСТРОЙЩИК</h4>
                             <section className='developer-right-info'>
-                                <p className='developer-right-info-text'>ГК «Академия» строит жилье и коммерческую <br/> недвижимость с 2015 года. Компания выполняет полный <br/> цикл работ: от разработки концепции до управления <br/> готовым объектом.</p>
-                                <section className='developer-right-info-item'>
-                                    <p className='developer-right-info-item_text'><span className='item_slash'>/</span> 7  ЛЕТ</p>
-                                    <span className='developer-right-info-item_down'>Работы</span>
-                                </section>
-                                <section className='developer-right-info-item'>
-                                    <p className='developer-right-info-item_text'><span className='item_slash'>/</span> 3</p>
-                                    <span className='developer-right-info-item_down'>Проекта</span>
-                                </section>
-                                <section className='developer-right-info-item'>
-                                    <p className='developer-right-info-item_text'><span className='item_slash'>/</span> 465</p>
-                                    <span className='developer-right-info-item_down'>Счастливых семей</span>
+                                <p className='developer-right-info-text'>ГК «Академия» строит жилье и коммерческую недвижимость с 2015 года. Компания выполняет полный цикл работ: от разработки концепции до управления готовым объектом.</p>
+                                <section className='developer-right-container'>
+                                    <section className='developer-right-info-item'>
+                                        <p className='developer-right-info-item_text'><span className='item_slash'>/</span> 7  ЛЕТ</p>
+                                        <span className='developer-right-info-item_down'>Работы</span>
+                                    </section>
+                                    <section className='developer-right-info-item'>
+                                        <p className='developer-right-info-item_text'><span className='item_slash'>/</span> 3</p>
+                                        <span className='developer-right-info-item_down'>Проекта</span>
+                                    </section>
+                                    <section className='developer-right-info-item'>
+                                        <p className='developer-right-info-item_text'><span className='item_slash'>/</span> 465</p>
+                                        <span className='developer-right-info-item_down'>Счастливых семей</span>
+                                    </section>
                                 </section>
                             </section>
                         </section>
                     </section>
                 </section>
             </section>
-            <section className='map-background'>
+            <section id='map' className='map-background'>
                 <section className='container'>
                     <section className='map-top'>
                         <nav className='map-nav'>
@@ -205,23 +265,28 @@ const Main = () => {
                         </section>
                         <section className='apartments-info'>
                             <section className='apartments-info-item'>
-                                <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
-                                <h4 className='apartments-info-price'>2 739 000 руб.</h4>
+                                <section className='apartments-info-container-img'>
+                                    <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
+                                </section>                                <h4 className='apartments-info-price'>2 739 000 руб.</h4>
                                 <p className='apartments-info-apart'>1 комн. 32.4 м² <span className='apartments-info-apart_roof'>- Этаж 3/9</span></p>
                             </section>
                             <section className='apartments-info-item'>
-                                <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
+                                <section className='apartments-info-container-img'>
+                                    <img className='apartments-info-img' src={apartaments1} alt="appartaments"/>
+                                </section>
                                 <h4 className='apartments-info-price'>2 769 000 руб.</h4>
                                 <p className='apartments-info-apart'>1 комн. 33.4 м² <span className='apartments-info-apart_roof'>- Этаж 5/9</span></p>
                             </section>
                             <section className='apartments-info-item'>
-                                <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
-                                <h4 className='apartments-info-price'>2 719 000 руб.</h4>
+                                <section className='apartments-info-container-img'>
+                                    <img className='apartments-info-img' src={apartaments2} alt="appartaments"/>
+                                </section>                                <h4 className='apartments-info-price'>2 719 000 руб.</h4>
                                 <p className='apartments-info-apart'>1 комн. 31.4 м² <span className='apartments-info-apart_roof'>- Этаж 2/9</span></p>
                             </section>
                             <section className='apartments-info-item'>
-                                <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
-                                <h4 className='apartments-info-price'>2 799 000 руб.</h4>
+                                <section className='apartments-info-container-img'>
+                                    <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
+                                </section>                                <h4 className='apartments-info-price'>2 799 000 руб.</h4>
                                 <p className='apartments-info-apart'>1 комн. 32.4 м² <span className='apartments-info-apart_roof'>- Этаж 7/9</span></p>
                             </section>
                         </section>
@@ -260,7 +325,7 @@ const Main = () => {
                         <span className='footer-map-createEyeTronic'>Разработано в <span className='footer-map-createEyeTronic_style'>Eyetronic</span>, 2021©</span>
                     </section>
                     <section className='footer-map-last-info'>
-                        <span className='footer-map-last-info-text'>Информация, предоставленная на сайте, не является публичной офертой. Все цены действительны на 25 июня 2021 г. при условии единовременной оплаты. Элементы благоустройства, иллюстрации и описания дизайн-проектов <br/> квартир приведены для сведения, являются примером возможной организации жилого пространства. Представленные сведения носят исключительно информационный характер.</span>
+                        <span className='footer-map-last-info-text'>Информация, предоставленная на сайте, не является публичной офертой. Все цены действительны на 25 июня 2021 г. при условии единовременной оплаты. Элементы благоустройства, иллюстрации и описания дизайн-проектов квартир приведены для сведения, являются примером возможной организации жилого пространства. Представленные сведения носят исключительно информационный характер.</span>
                     </section>
                 </section>
             </footer>
