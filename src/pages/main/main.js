@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import logo from '../../img/logo.png'
 import logoBlack from '../../img/logo-black.png'
 import fb from '../../img/fb.png'
-import bgg from '../../img/bg.png'
 import bg1 from '../../img/bg1.png'
 import bg2 from '../../img/bg2.png'
+import bg3 from '../../img/bg3.png'
 import vk from '../../img/vk.png'
 import inst from '../../img/inst.png'
 import fbb from '../../img/fbb.png'
@@ -26,13 +26,60 @@ import message from '../../img/message.png'
 
 import './style.css'
 
+const img = [bg3, bg2, bg1]
+
+const data = [
+    {title: 'РЯДОМ — ОЗЕРО И КАПРАЛЬЕВ ПАРК', description: 'В 300 метрах от ЖК «Браун Хаус» располагаются озеро и сквер, где можно отдохнуть, погулять с детьми или заняться спортом. Здесь есть теннисный корт, Летний театр и смотровая площадка. Отличным местом для досуга на свежем воздухе станет обширный Капральев парк. В нем оборудованы площадки для барбекю, дорожки для прогулок и езды на велосипедах. Лесной массив также благоприятно влияет на состояние экологии, поглощая выхлопные газы автомобилей.'},
+    {title: 'РАЗВИТАЯ ИНФРАСТРУКТУРА РАЙОНА И НЕВЫСОКАЯ ПЛОТНОСТЬ ЗАСТРОЙКИ', description: 'Дом появится в обжитом районе и будет включен в уже существующий двор. При этом плотность застройки здесь не так высока, как в западной части Мурино, что снижает нагрузку на объекты торговой и социальной инфраструктуры в пешей доступности.'},
+    {title: 'БЛАГОУСТРОЙСТВО ПРИДОМОВОЙ ТЕРРИТОРИИ', description: 'С одной стороны двора мы оборудуем открытую автостоянку. С другой — игровую площадку для детей разных возрастов и зоны отдыха. Разработан ландшафтный дизайн, предполагающий высадку газонов и кустарников.'},
+    {title: 'РЯДОМ — ОЗЕРО И КАПРАЛЬЕВ ПАРК', description: 'В 300 метрах от ЖК «Браун Хаус» располагаются озеро и сквер, где можно отдохнуть, погулять с детьми или заняться спортом. Здесь есть теннисный корт, Летний театр и смотровая площадка. Отличным местом для досуга на свежем воздухе станет обширный Капральев парк. В нем оборудованы площадки для барбекю, дорожки для прогулок и езды на велосипедах. Лесной массив также благоприятно влияет на состояние экологии, поглощая выхлопные газы автомобилей.'},
+    {title: 'РАЗВИТАЯ ИНФРАСТРУКТУРА РАЙОНА И НЕВЫСОКАЯ ПЛОТНОСТЬ ЗАСТРОЙКИ', description: 'Дом появится в обжитом районе и будет включен в уже существующий двор. При этом плотность застройки здесь не так высока, как в западной части Мурино, что снижает нагрузку на объекты торговой и социальной инфраструктуры в пешей доступности.'},
+    {title: 'БЛАГОУСТРОЙСТВО ПРИДОМОВОЙ ТЕРРИТОРИИ', description: 'С одной стороны двора мы оборудуем открытую автостоянку. С другой — игровую площадку для детей разных возрастов и зоны отдыха. Разработан ландшафтный дизайн, предполагающий высадку газонов и кустарников.'},
+    {title: 'РЯДОМ — ОЗЕРО И КАПРАЛЬЕВ ПАРК', description: 'В 300 метрах от ЖК «Браун Хаус» располагаются озеро и сквер, где можно отдохнуть, погулять с детьми или заняться спортом. Здесь есть теннисный корт, Летний театр и смотровая площадка. Отличным местом для досуга на свежем воздухе станет обширный Капральев парк. В нем оборудованы площадки для барбекю, дорожки для прогулок и езды на велосипедах. Лесной массив также благоприятно влияет на состояние экологии, поглощая выхлопные газы автомобилей.'},
+]
+
 const Main = () => {
 
     const [open, setOpen] = useState(false)
 
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [secondIndex, setSecondIndex] = useState(0);
+
     const openMenu = () => {
         open ? setOpen(false) : setOpen(true)
     }
+
+    const handlerChoseBg = (num) => {
+        setActiveIndex(num)
+    }
+
+    const handlerNext = () => {
+        setSecondIndex((current) => {
+            const res = current === data.length - 1 ? 0 : current + 1
+            return res
+        })
+        console.log(secondIndex)
+    }
+
+    const handlerBack = () => {
+        setSecondIndex((current) => {
+            const res = current ===  0 ? data.length - 1 : current - 1
+            return res
+        })
+        console.log(secondIndex)
+    }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex((current) => {
+                const res = current === img.length - 1 ? 0 : current + 1
+                return res
+            })
+        }, 6000)
+        return () => clearInterval(interval)
+    }, [])
+
+    console.log(img[activeIndex])
 
     return (
         <>
@@ -68,67 +115,130 @@ const Main = () => {
                         </section>
                     </section>
             ) : null }
-            <section className='background' >
-                <section className='container'>
-                    <header className='header'>
-                        <a href="#"><img className='header-logo' src={logo} alt="Braun House Family"/></a>
-                        <nav className='header-nav'>
-                            <li className='header-nav_item'><a className='nav-item_a' href="#">Квартиры</a></li>
-                            <li className='header-nav_item'><a className='nav-item_a' href="#">Как купить</a></li>
-                            <li className='header-nav_item'><a className='nav-item_a' href="#">Ход строительства</a></li>
-                            <li className='header-nav_item'><a className='nav-item_a' href="#">Документы</a></li>
-                            <li className='header-nav_item'><a className='nav-item_a' href="#">Новости</a></li>
-                            <li className='header-nav_item'><a className='nav-item_a' href="#">Коммерция</a></li>
-                            <li className='header-nav_item'><a className='nav-item_a' href="#">Контакты</a></li>
-                        </nav>
-                        <section className='header-contact'>
-                            <nav className='header-contact_nav'>
-                                <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={vk} alt="vk"/></a>
-                                <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={inst} alt="instagram"/></a>
-                                <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={fb} alt="facebook"/></a>
+            {activeIndex ? (
+                <section className='background' style={{backgroundImage: `url(${img[activeIndex]})`}}>
+                    <section className='container'>
+                        <header className='header'>
+                            <a href="#"><img className='header-logo' src={logo} alt="Braun House Family"/></a>
+                            <nav className='header-nav'>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Квартиры</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Как купить</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Ход строительства</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Документы</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Новости</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Коммерция</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Контакты</a></li>
                             </nav>
-                            <a className='contact-number' href="#">+7 (905) 600-60-06</a>
-                            <section onClick={openMenu} className='mobile-menu-btn'>
-                                <div className='mobile-menu-burger'></div>
+                            <section className='header-contact'>
+                                <nav className='header-contact_nav'>
+                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={vk} alt="vk"/></a>
+                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={inst} alt="instagram"/></a>
+                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={fb} alt="facebook"/></a>
+                                </nav>
+                                <a className='contact-number' href="#">+7 (905) 600-60-06</a>
+                                <section onClick={openMenu} className='mobile-menu-btn'>
+                                    <div className='mobile-menu-burger'></div>
+                                </section>
                             </section>
-                        </section>
-                    </header>
-                    <section className='content'>
-                        <section className='stepWork'>
-                            <img className='stepWork-img' src={tractor} alt="tractor"/>
-                            <span className='stepWork-text'>ХОД <br/> СТРОИТЕЛЬСТВА</span>
-                        </section>
-                        <section className='appartments'>
-                            <h1 className='appartments-text'>КВАРТИРЫ РЯДОМ <br/> С ПАРКОМ И ОЗЕРОМ <br/> ОТ 2,7 МЛН</h1>
-                        </section>
-                        <section className='choose'>
-                            <section className='choose-container'>
-                                <span className='choose-text'>Всего 96 квартир от 24 — 64м² <br/> Сдача в 4 кв. 2022</span>
-                                <section className='choose-link'>
-                                    <img className='choose-link-img' src={arrow} alt="arrow"/>
-                                    <span className='choose-link-text'>Выбрать квартиру</span>
+                        </header>
+                        <section className='content'>
+                            <section className='stepWork'>
+                                <img className='stepWork-img' src={tractor} alt="tractor"/>
+                                <span className='stepWork-text'>ХОД <br/> СТРОИТЕЛЬСТВА</span>
+                            </section>
+                            <section className='appartments'>
+                                <h1 className='appartments-text'>КВАРТИРЫ РЯДОМ <br/> С ПАРКОМ И ОЗЕРОМ <br/> ОТ 2,7 МЛН</h1>
+                            </section>
+                            <section className='choose'>
+                                <section className='choose-container'>
+                                    <span className='choose-text'>Всего 96 квартир от 24 — 64м² <br/> Сдача в 4 кв. 2022</span>
+                                    <section className='choose-link'>
+                                        <img className='choose-link-img' src={arrow} alt="arrow"/>
+                                        <span className='choose-link-text'>Выбрать квартиру</span>
+                                    </section>
                                 </section>
                             </section>
                         </section>
-                    </section>
-                    <section className='down'>
-                        <section className='arrowDown'>
-                            <img className='arrowDown-img' src={arrowDown} alt="Стрелка вниз"/>
-                        </section>
-                        <section className='slider-numbers'>
-                            <section className='slider-numbers-container'>
-                                <span className='slider-number-span'>01 / 03</span>
+                        <section className='down'>
+                            <section className='arrowDown'>
+                                <img className='arrowDown-img' src={arrowDown} alt="Стрелка вниз"/>
                             </section>
-                        </section>
-                        <section className='slider-pin'>
-                            <li className='slider-pin-item'></li>
-                            <li className='slider-pin-item slider-pin-item_active'></li>
-                            <li className='slider-pin-item'></li>
-                            <li className='slider-pin-item'></li>
+                            <section className='slider-numbers'>
+                                <section className='slider-numbers-container'>
+                                    <span className='slider-number-span'>{activeIndex == 0 ? '01' : activeIndex == 1 ? '02' : '03'} / 03</span>
+                                </section>
+                            </section>
+                            <section className='slider-pin'>
+                                <li onClick={() => handlerChoseBg(0)} className={`slider-pin-item ${activeIndex == 0 ? 'slider-pin-item_active' : ''}`}></li>
+                                <li onClick={() => handlerChoseBg(1)} className={`slider-pin-item ${activeIndex == 1 ? 'slider-pin-item_active' : ''}`}></li>
+                                <li onClick={() => handlerChoseBg(2)} className={`slider-pin-item ${activeIndex == 2 ? 'slider-pin-item_active' : ''}`}></li>
+                            </section>
                         </section>
                     </section>
                 </section>
-            </section>
+            ) : (
+                <section className='background' style={{backgroundImage: `url(${img[0]})`}}>
+                    <section className='container'>
+                        <header className='header'>
+                            <a href="#"><img className='header-logo' src={logo} alt="Braun House Family"/></a>
+                            <nav className='header-nav'>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Квартиры</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Как купить</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Ход строительства</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Документы</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Новости</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Коммерция</a></li>
+                                <li className='header-nav_item'><a className='nav-item_a' href="#">Контакты</a></li>
+                            </nav>
+                            <section className='header-contact'>
+                                <nav className='header-contact_nav'>
+                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={vk} alt="vk"/></a>
+                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={inst} alt="instagram"/></a>
+                                    <a className='contact-nav_a' href="#"><img className='contact-nav_img' src={fb} alt="facebook"/></a>
+                                </nav>
+                                <a className='contact-number' href="#">+7 (905) 600-60-06</a>
+                                <section onClick={openMenu} className='mobile-menu-btn'>
+                                    <div className='mobile-menu-burger'></div>
+                                </section>
+                            </section>
+                        </header>
+                        <section className='content'>
+                            <section className='stepWork'>
+                                <img className='stepWork-img' src={tractor} alt="tractor"/>
+                                <span className='stepWork-text'>ХОД <br/> СТРОИТЕЛЬСТВА</span>
+                            </section>
+                            <section className='appartments'>
+                                <h1 className='appartments-text'>КВАРТИРЫ РЯДОМ <br/> С ПАРКОМ И ОЗЕРОМ <br/> ОТ 2,7 МЛН</h1>
+                            </section>
+                            <section className='choose'>
+                                <section className='choose-container'>
+                                    <span className='choose-text'>Всего 96 квартир от 24 — 64м² <br/> Сдача в 4 кв. 2022</span>
+                                    <section className='choose-link'>
+                                        <img className='choose-link-img' src={arrow} alt="arrow"/>
+                                        <span className='choose-link-text'>Выбрать квартиру</span>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                        <section className='down'>
+                            <section className='arrowDown'>
+                                <img className='arrowDown-img' src={arrowDown} alt="Стрелка вниз"/>
+                            </section>
+                            <section className='slider-numbers'>
+                                <section className='slider-numbers-container'>
+                                    <span className='slider-number-span'>01 / 03</span>
+                                </section>
+                            </section>
+                            <section className='slider-pin'>
+                                <li onClick={() => handlerChoseBg(0)} className={`slider-pin-item ${activeIndex == 0 ? 'slider-pin-item_active' : ''}`}></li>
+                                <li onClick={() => handlerChoseBg(1)} className={`slider-pin-item ${activeIndex == 1 ? 'slider-pin-item_active' : ''}`}></li>
+                                <li onClick={() => handlerChoseBg(2)} className={`slider-pin-item ${activeIndex == 2 ? 'slider-pin-item_active' : ''}`}></li>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            )}
+
             <section className='container-help'>
                 <section className='container'>
                     <section className='info-block'>
@@ -146,37 +256,85 @@ const Main = () => {
                     </section>
                 </section>
             </section>
-
+            {secondIndex ? (
                 <section className='container-help'>
                     <section className='container'>
                         <section className='seven-problems-block'>
-                        <section className='seven-problems'>
-                            <h4 className='right-block_seven'>7</h4>
-                            <h4 className='right-block_title'>ПРИЧИН КУПИТЬ <br/> ЗДЕСЬ КВАРТИРУ</h4>
-                        </section>
-                        <section className='slider-block'>
-                            <section className='left-block'>
-                                <h4 className='left-block_title'>РЯДОМ - РЕКА, ОЗЕРО <br/> И НЕСКОЛЬКО ПАРКОВ</h4>
-                                <p className='left-block_paragraph'>В 200 метрах от комплекса расположено <br/> озеро со сквером и Летним театром, где <br/> проводятся праздничные мероприятия. <br/> На таком же удалении протекает река Охта, <br/> а через дорогу находится крупный зеленый <br/> массив — Капральев парк, где оборудованы <br/> прогулочные тропинки и зоны для барбекю. <br/> Экологически чистая местность располагает <br/> к прогулкам на свежем воздухе, семейным <br/> пикникам и тренировкам.</p>
-                                <section className='left-block-slider-buttons'>
-                                    <img className='left-block-slider-buttons-left slider-btn' src={arrow} alt="arrow"/>
-                                    <img className='left-block-slider-buttons-right slider-btn' src={arrow} alt="arrow"/>
-                                </section>
-                                <section className='left-block-slider-count'>
-                                    <span className='left-block-slider-count_text'>01 / 07</span>
-                                </section>
+                            <section className='seven-problems'>
+                                <h4 className='right-block_seven'>7</h4>
+                                <h4 className='right-block_title'>ПРИЧИН КУПИТЬ <br/> ЗДЕСЬ КВАРТИРУ</h4>
                             </section>
-                            <section className='right-block'>
-                                <section className='right-block-slider'>
-                                    <img className='right-block-slider-item' src={people} alt="people"/>
-                                    <img className='right-block-slider-item' src={children} alt="children"/>
-                                    <img className='right-block-slider-item' src={weed} alt="weed"/>
+                            <section className='slider-block'>
+                                <section className='left-block'>
+                                    <h4 className='left-block_title'>{data[secondIndex].title}</h4>
+                                    <p className='left-block_paragraph'>{data[secondIndex].description}</p>
+                                    <section className='left-block-slider-buttons'>
+                                        <img onClick={() => handlerBack()} className='left-block-slider-buttons-left slider-btn' src={arrow} alt="arrow"/>
+                                        <img onClick={() => handlerNext()} className='left-block-slider-buttons-right slider-btn' src={arrow} alt="arrow"/>
+                                    </section>
+                                    <section className='left-block-slider-count'>
+                                        <span className='left-block-slider-count_text'>{`0${secondIndex + 1}`} / 07</span>
+                                    </section>
+                                </section>
+                                <section className='right-block'>
+                                    <section className='right-block-slider' style={{left: `-${secondIndex * (380 + (437 - 380) * ((window.screen.availWidth - 1280) / (1920 - 1280)))}px`}}>
+                                        <img className='right-block-slider-item' src={people} alt="people"/>
+                                        <img className='right-block-slider-item' src={children} alt="children"/>
+                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                        <img className='right-block-slider-item' src={people} alt="people"/>
+                                        <img className='right-block-slider-item' src={children} alt="children"/>
+                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                        <img className='right-block-slider-item' src={people} alt="people"/>
+                                        <img className='right-block-slider-item' src={children} alt="children"/>
+                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                    </section>
                                 </section>
                             </section>
                         </section>
                     </section>
                 </section>
-            </section>
+            ) : (
+                <section className='container-help'>
+                    <section className='container'>
+                        <section className='seven-problems-block'>
+                            <section className='seven-problems'>
+                                <h4 className='right-block_seven'>7</h4>
+                                <h4 className='right-block_title'>ПРИЧИН КУПИТЬ <br/> ЗДЕСЬ КВАРТИРУ</h4>
+                            </section>
+                            <section className='slider-block'>
+                                <section className='left-block'>
+                                    <h4 className='left-block_title'>{data[0].title}</h4>
+                                    <p className='left-block_paragraph'>{data[0].description}</p>
+                                    <section className='left-block-slider-buttons'>
+                                        <img onClick={() => handlerBack()} className='left-block-slider-buttons-left slider-btn' src={arrow} alt="arrow"/>
+                                        <img onClick={() => handlerNext()} className='left-block-slider-buttons-right slider-btn' src={arrow} alt="arrow"/>
+                                    </section>
+                                    <section className='left-block-slider-count'>
+                                        <span className='left-block-slider-count_text'>{`0${secondIndex + 1}`} / 07</span>
+                                    </section>const screenWidth =
+                                    const screenHeight = window.screen.height
+                                </section>
+                                <section className='right-block'>
+                                    <section className='right-block-slider' style={{left: `-${secondIndex * (380 + (437 - 380) * ((window.screen.availWidth - 1280) / (1920 - 1280)))}px`}}>
+                                        <img className='right-block-slider-item' src={people} alt="people"/>
+                                        <img className='right-block-slider-item' src={children} alt="children"/>
+                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                        <img className='right-block-slider-item' src={people} alt="people"/>
+                                        <img className='right-block-slider-item' src={children} alt="children"/>
+                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                        <img className='right-block-slider-item' src={people} alt="people"/>
+                                        <img className='right-block-slider-item' src={children} alt="children"/>
+                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            )
+
+            }
+
             <section className='container-help'>
                 <section className='container'>
                     <section className='developer'>

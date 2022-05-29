@@ -7,21 +7,6 @@
 $inter: "Inter", sans-serif
 $OptimaCyr: "Optima Cyr", sans-serif
 
-@function prc($pxOne, $pxTwo)
-  $result: math.div($pxOne, $pxTwo) * 100%
-  @return $result
-
-@function rem($px)
-  $result: math.div($px, 16) + rem
-  @return $result
-
-@function em($px)
-  $result: math.div($px, 16) + em
-  @return $result
-
-
-
-
 .container-help
   width: 100%
   overflow-x: hidden
@@ -37,7 +22,8 @@ $OptimaCyr: "Optima Cyr", sans-serif
   width: 100%
   height: 100vh
   font-family: $inter
-  background-image: url("../../img/bg.png")
+  transition: all 0.5s ease-in-out
+  background-color: #4B3D3A
   background-position: center
   background-size: cover
 
@@ -250,6 +236,7 @@ $OptimaCyr: "Optima Cyr", sans-serif
     .slider-pin
       position: relative
       width: 84px
+      height: 20px
       display: flex
       justify-content: space-between
       align-items: center
@@ -263,12 +250,13 @@ $OptimaCyr: "Optima Cyr", sans-serif
         background-color: #FFFFFF
         border-radius: 500%
         cursor: pointer
-        transition: all .1s ease-in-out
+        transition: border .1s ease-in-out
 
         &:hover
           background-color: #e1e1e1
 
       .slider-pin-item_active
+        margin: -6px
         border: 6px solid rgba(0, 0, 0, 0.3)
 
 .info-block
@@ -388,11 +376,13 @@ $OptimaCyr: "Optima Cyr", sans-serif
 
     .right-block
       position: relative
+      overflow: hidden
       width: calc(645px + (1145 - 645) * ((100vw - 1280px) / (1920 - 1280)))
 
       .right-block-slider
         position: absolute
-        width: calc(437px * 7)
+        width: calc(437px * 9)
+        transition: all 0.5s ease-in-out
 
         .right-block-slider-item
           position: relative
