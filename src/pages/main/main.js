@@ -17,6 +17,10 @@ import house from '../../img/house.png'
 import park from '../../img/park.png'
 import people from '../../img/people.png'
 import children from '../../img/children.png'
+import dude from '../../img/dude.png'
+import dude2 from '../../img/dude2.png'
+import forest from '../../img/forest.png'
+import camerdude from '../../img/camerdude.png'
 import weed from '../../img/weed.png'
 import akademia from '../../img/akadimia.png'
 import apartaments from '../../img/appartaments.png'
@@ -289,12 +293,12 @@ const Main = () => {
                                         <img className='right-block-slider-item' src={people} alt="people"/>
                                         <img className='right-block-slider-item' src={children} alt="children"/>
                                         <img className='right-block-slider-item' src={weed} alt="weed"/>
-                                        <img className='right-block-slider-item' src={people} alt="people"/>
-                                        <img className='right-block-slider-item' src={children} alt="children"/>
-                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
-                                        <img className='right-block-slider-item' src={people} alt="people"/>
-                                        <img className='right-block-slider-item' src={children} alt="children"/>
-                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                        <img className='right-block-slider-item' src={dude} alt="people"/>
+                                        <img className='right-block-slider-item' src={dude2} alt="children"/>
+                                        <img className='right-block-slider-item' src={forest} alt="weed"/>
+                                        <img className='right-block-slider-item' src={camerdude} alt="people"/>
+                                        <img className='right-block-slider-item' src={people} alt="children"/>
+                                        <img className='right-block-slider-item' src={children} alt="weed"/>
                                     </section>
                                 </section>
                             </section>
@@ -399,21 +403,23 @@ const Main = () => {
                                 <img className='news-header-tool-buttons-right' src={arrow} alt="arrow"/>
                             </section>
                         </section>
-                        <section className='news-info'>
-                            <section className='news-info-item'>
-                                <time className='news-info-time'>12 июня 2020</time>
-                                <h5 className='news-info-item-title'>Подписан договор с ЛенРусСтрой</h5>
-                                <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
-                            </section>
-                            <section className='news-info-item'>
-                                <time className='news-info-time'>12 июня 2020</time>
-                                <h5 className='news-info-item-title'>Подписан договор проектного финансирования с ООО«Сбербанк»</h5>
-                                <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
-                            </section>
-                            <section className='news-info-item'>
-                                <time className='news-info-time'>12 июня 2020</time>
-                                <h5 className='news-info-item-title'>Подписан договор с ЛенРусСтрой</h5>
-                                <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
+                        <section className='news-info-container'>
+                            <section className='news-info'>
+                                <section className='news-info-item'>
+                                    <time className='news-info-time'>12 июня 2020</time>
+                                    <h5 className='news-info-item-title'>Подписан договор с ЛенРусСтрой</h5>
+                                    <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
+                                </section>
+                                <section className='news-info-item'>
+                                    <time className='news-info-time'>12 июня 2020</time>
+                                    <h5 className='news-info-item-title'>Подписан договор проектного финансирования с ООО«Сбербанк»</h5>
+                                    <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
+                                </section>
+                                <section className='news-info-item'>
+                                    <time className='news-info-time'>12 июня 2020</time>
+                                    <h5 className='news-info-item-title'>Подписан договор с ЛенРусСтрой</h5>
+                                    <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
+                                </section>
                             </section>
                         </section>
                     </section>
@@ -429,31 +435,33 @@ const Main = () => {
                                 <span className='apartments-header-tool-text'>ВЫБРАТЬ КВАРТИРУ</span>
                             </section>
                         </section>
-                        <section className='apartments-info'>
-                            <section className='apartments-info-item'>
-                                <section className='apartments-info-container-img'>
-                                    <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
-                                </section>                                <h4 className='apartments-info-price'>2 739 000 руб.</h4>
-                                <p className='apartments-info-apart'>1 комн. 32.4 м² <span className='apartments-info-apart_roof'>- Этаж 3/9</span></p>
-                            </section>
-                            <section className='apartments-info-item'>
-                                <section className='apartments-info-container-img'>
-                                    <img className='apartments-info-img' src={apartaments1} alt="appartaments"/>
+                        <section className='apartments-info-container'>
+                            <section className='apartments-info'>
+                                <section className='apartments-info-item'>
+                                    <section className='apartments-info-container-img'>
+                                        <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
+                                    </section>                                <h4 className='apartments-info-price'>2 739 000 руб.</h4>
+                                    <p className='apartments-info-apart'>1 комн. 32.4 м² <span className='apartments-info-apart_roof'>- Этаж 3/9</span></p>
                                 </section>
-                                <h4 className='apartments-info-price'>2 769 000 руб.</h4>
-                                <p className='apartments-info-apart'>1 комн. 33.4 м² <span className='apartments-info-apart_roof'>- Этаж 5/9</span></p>
-                            </section>
-                            <section className='apartments-info-item'>
-                                <section className='apartments-info-container-img'>
-                                    <img className='apartments-info-img' src={apartaments2} alt="appartaments"/>
-                                </section>                                <h4 className='apartments-info-price'>2 719 000 руб.</h4>
-                                <p className='apartments-info-apart'>1 комн. 31.4 м² <span className='apartments-info-apart_roof'>- Этаж 2/9</span></p>
-                            </section>
-                            <section className='apartments-info-item'>
-                                <section className='apartments-info-container-img'>
-                                    <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
-                                </section>                                <h4 className='apartments-info-price'>2 799 000 руб.</h4>
-                                <p className='apartments-info-apart'>1 комн. 32.4 м² <span className='apartments-info-apart_roof'>- Этаж 7/9</span></p>
+                                <section className='apartments-info-item'>
+                                    <section className='apartments-info-container-img'>
+                                        <img className='apartments-info-img' src={apartaments1} alt="appartaments"/>
+                                    </section>
+                                    <h4 className='apartments-info-price'>2 769 000 руб.</h4>
+                                    <p className='apartments-info-apart'>1 комн. 33.4 м² <span className='apartments-info-apart_roof'>- Этаж 5/9</span></p>
+                                </section>
+                                <section className='apartments-info-item'>
+                                    <section className='apartments-info-container-img'>
+                                        <img className='apartments-info-img' src={apartaments2} alt="appartaments"/>
+                                    </section>                                <h4 className='apartments-info-price'>2 719 000 руб.</h4>
+                                    <p className='apartments-info-apart'>1 комн. 31.4 м² <span className='apartments-info-apart_roof'>- Этаж 2/9</span></p>
+                                </section>
+                                <section className='apartments-info-item'>
+                                    <section className='apartments-info-container-img'>
+                                        <img className='apartments-info-img' src={apartaments} alt="appartaments"/>
+                                    </section>                                <h4 className='apartments-info-price'>2 799 000 руб.</h4>
+                                    <p className='apartments-info-apart'>1 комн. 32.4 м² <span className='apartments-info-apart_roof'>- Этаж 7/9</span></p>
+                                </section>
                             </section>
                         </section>
                     </section>
@@ -470,8 +478,10 @@ const Main = () => {
                             </section>
                         </section>
                         <section className='footer-top-right'>
-                            <a className='footer-top-right-number' href="#">+7 (812) 429-56-73</a>
-                            <a className='footer-top-right-site' href="#">info@brownhouse.ru</a>
+                            <section className='footer-top-right-container'>
+                                <a className='footer-top-right-number' href="#">+7 (812) 429-56-73</a>
+                                <a className='footer-top-right-site' href="#">info@brownhouse.ru</a>
+                            </section>
                             <section className='footer-top-right-contacts'>
                                 <img className='footer-top-right-contacts-item' src={vk} alt="vk"/>
                                 <img className='footer-top-right-contacts-item' src={inst} alt="instagram"/>
