@@ -250,7 +250,7 @@ $Gold: #CC9268
         .slider-number-span
           font-family: $OptimaCyr
           width: 200px
-          font-size: calc(18px + (24 - 18) * ((100vw - 1280px) / (1920 - 1280)))
+          font-size: resp(18, 24, 1280, 1920)
 
     .slider-pin
       position: relative
@@ -283,36 +283,35 @@ $Gold: #CC9268
   flex-direction: row
   justify-content: center
   width: 100%
-  margin-bottom: 140px
+  margin-top: resp(152, 184, 1280, 1920)
   font-family: $inter
 
   .info-block_container
     display: flex
     width: 100%
     justify-content: space-between
-    margin-top: 184px
   
     .info-first
-      width: calc(644px + (853 - 644) * ((100vw - 1280px) / (1920 - 1280)))
-      margin-right: calc(115px + (311 - 115) * ((100vw - 1280px) / (1920 - 1280)))
+      width: resp(644, 853, 1280, 1920)
+      margin-right: resp(115, 311, 1280, 1920)
 
       .info-first_img
         width: 100%
 
       .info-first_title
-        font-size: calc(40px + (52 - 40) * ((100vw - 1280px) / (1920 - 1280)))
+        font-size: resp(40, 52, 1280, 1920)
         font-family: $OptimaCyr
         width: 524px
-        margin-top: calc(74px + (96 - 74) * ((100vw - 1280px) / (1920 - 1280)))
+        margin-top: resp(115, 311, 1280, 1920)
         color: #412923
 
     .info-second
-      width: calc(360px + (563 - 360) * ((100vw - 1280px) / (1920 - 1280)))
+      width: resp(360, 563, 1280, 1920)
 
       .info-second_text
-        margin-bottom: calc(50px + (66 - 50) * ((100vw - 1280px) / (1920 - 1280)))
-        font-size: calc(15px + (18 - 15) * ((100vw - 1280px) / (1920 - 1280)))
-        line-height: calc(21px + (25 - 21) * ((100vw - 1280px) / (1920 - 1280)))
+        margin-bottom: resp(50, 66, 1280, 1920)
+        font-size: resp(15, 18, 1280, 1920)
+        line-height: resp(21, 25, 1280, 1920)
         color: #412923
 
       .info-second_img
@@ -568,18 +567,20 @@ $Gold: #CC9268
           background-color: $Gold
 
   .news-info-container
-
+    overflow-x: hidden
 
     .news-info
       display: flex
+      position: relative
       margin-top: calc(24px + (64 - 24) * ((100vw - 1280px) / (1920 - 1280)))
-      justify-content: space-between
+      width: calc(677px * 4)
+      transition: all .3s ease-in-out
 
       .news-info-item
         display: flex
         flex-direction: column
         padding: calc(40px + (48 - 40) * ((100vw - 1280px) / (1920 - 1280))) calc(24px + (40 - 24) * ((100vw - 1280px) / (1920 - 1280)))
-        width: 467px
+        width: resp(320, 480, 1280, 1920)
         margin-right: 20px
         height: 155px
         border: 1px solid $Beige_light
@@ -913,8 +914,9 @@ $Gold: #CC9268
       justify-content: space-between
 
       .mobile-menu-number
-        font-size: 15px
+        font-size: 18px
         color: $Braun
+        font-family: $OptimaCyr
         text-decoration: none
 
         &:hover
@@ -928,8 +930,9 @@ $Gold: #CC9268
         .mobile-menu-contact-nav_a
 
           .mobile-menu-contact-nav_img
+            width: 28px
 
-      .footer-top-right-site
+      .mobile-menu-footer-top-right-site
         font-size: 15px
         text-decoration: none
         color: $Braun
@@ -1068,12 +1071,12 @@ $Gold: #CC9268
     margin-top: 24px !important
 
   .news-info-item
+    padding: 40px 24px !important
+
 
     &:last-child
       display: none !important
 
-    &:nth-child(2)
-      margin-right: 0 !important
 
   .news-header-title
     font-size: 40px !important
@@ -1113,6 +1116,9 @@ $Gold: #CC9268
   .footer-top-left-btn_text
     font-size: 18px !important
 
+  .info-block
+    margin-top: resp(136, 152, 1024, 1280) !important
+
 
 
   .footer-top-right-number,
@@ -1126,6 +1132,12 @@ $Gold: #CC9268
 
   .footer-top
     margin: 48px 0 64px 0 !important
+
+  .news-info-item
+    width: resp(280, 320, 1024, 1280) !important
+
+
+
 
 
 
@@ -1150,6 +1162,10 @@ $Gold: #CC9268
 
   .footer-map-list-item
     margin-right: calc(24px + (16 - 24) * ((100vw - 768px) / (1024 - 768))) !important
+
+  .info-block
+    margin-top: resp(102, 136, 768, 1024) !important
+
 
   .header-logo
     width: 122px !important
@@ -1203,6 +1219,10 @@ $Gold: #CC9268
 
   .footer-map-last-info-text
     font-size: 11px !important
+
+  .news-info-item
+    width: resp(270, 400, 768, 1024) !important
+    padding: resp(32, 40, 768, 1024) 24px !important
 
 
 
@@ -1324,6 +1344,65 @@ $Gold: #CC9268
       display: flex !important
       flex-basis: 50% !important
 
+  .news-info-item
+    width: resp(284, 311, 375, 768) !important
+
+  .appartments-text
+    margin-top: resp(83, 154, 375, 768) !important
+    font-size: resp(30, 40, 375, 768) !important
+    line-height: resp(42, 48, 375, 768) !important
+
+  .choose-text
+    line-height: resp(21, 28, 375, 768) !important
+
+  .slider-numbers
+    display: none !important
+
+  .slider-pin
+    bottom: 20px !important
+
+  .mobile-menu-nav
+    height: resp(358, 430, 375, 768) !important
+
+  .mobile-menu-number
+    font-size: 24px !important
+
+  .mobile-menu-footer-top-right-site
+    font-size: 20px !important
+
+  .mobile-menu-footer
+    display: flex !important
+    flex-direction: column !important
+
+  .mobile-menu-number
+    margin-bottom: 32px !important
+
+  .mobile-menu-footer
+    height: 138px !important
+
+  .mobile-menu-contact_nav
+    order: -2 !important
+
+  .mobile-menu-footer-top-right-site
+    order: -1 !important
+
+  .down
+    bottom: 20px !important
+
+  .info-block
+    margin-top: resp(72, 102, 375, 768) !important
+
+  .info-first_title
+    font-size: 30px !important
+    line-height: 42px !important
+    margin-top: 40px !important
+
+  .info-second_text
+    font-size: 15px !important
+    width: 100% !important
+    line-height: 21px !important
+
+
 
 
 @media screen and (max-width: 550px)
@@ -1375,6 +1454,7 @@ $Gold: #CC9268
 
   .footer-map-list-item
     margin-bottom: 16px !important
+
 
 
 

@@ -42,12 +42,21 @@ const data = [
     {title: 'РЯДОМ — ОЗЕРО И КАПРАЛЬЕВ ПАРК', description: 'В 300 метрах от ЖК «Браун Хаус» располагаются озеро и сквер, где можно отдохнуть, погулять с детьми или заняться спортом. Здесь есть теннисный корт, Летний театр и смотровая площадка. Отличным местом для досуга на свежем воздухе станет обширный Капральев парк. В нем оборудованы площадки для барбекю, дорожки для прогулок и езды на велосипедах. Лесной массив также благоприятно влияет на состояние экологии, поглощая выхлопные газы автомобилей.'},
 ]
 
+const news = [
+    {title: 'Подписан договор с ЛенРусСтрой', time: '12 июня 2020', description: "Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это значит, что дом строит не абы кто"},
+    {title: 'Подписан договор проектного финансирования с ООО«Сбербанк»', time: '12 июня 2020', description: "Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это значит, что дом строит не абы кто"},
+    {title: 'Подписан договор с ЛенРусСтрой', time: '12 июня 2020', description: "Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это значит, что дом строит не абы кто"},
+    {title: 'Подписан договор проектного финансирования с ООО«Сбербанк»', time: '12 июня 2020', description: "Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это значит, что дом строит не абы кто"},
+
+]
+
 const Main = () => {
 
     const [open, setOpen] = useState(false)
 
     const [activeIndex, setActiveIndex] = useState(0);
     const [secondIndex, setSecondIndex] = useState(0);
+    const [thereIndex, setThereIndex] = useState(0);
 
     const openMenu = () => {
         open ? setOpen(false) : setOpen(true)
@@ -73,6 +82,22 @@ const Main = () => {
         console.log(secondIndex)
     }
 
+    const newsNext = () => {
+        setThereIndex((current) => {
+            const res = current === news.length - 1 ? 0 : current + 1
+            return res
+        })
+        console.log(secondIndex)
+    }
+
+    const newsBack = () => {
+        setThereIndex((current) => {
+            const res = current ===  0 ? news.length - 1 : current - 1
+            return res
+        })
+        console.log(secondIndex)
+    }
+
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((current) => {
@@ -83,7 +108,7 @@ const Main = () => {
         return () => clearInterval(interval)
     }, [])
 
-    console.log(img[activeIndex])
+    console.log(window.screen.availWidth)
 
     return (
         <>
@@ -113,7 +138,7 @@ const Main = () => {
                                         <a className='mobile-menu-contact-nav_a' href="#"><img className='mobile-menu-contact-nav_img' src={instb} alt="instagram"/></a>
                                         <a className='mobile-menu-contact-nav_a' href="#"><img className='mobile-menu-contact-nav_img' src={fbb} alt="facebook"/></a>
                                     </nav>
-                                    <a className='footer-top-right-site' href="#">info@brownhouse.ru</a>
+                                    <a className='mobile-menu-footer-top-right-site' href="#">info@brownhouse.ru</a>
                                 </section>
                             </section>
                         </section>
@@ -399,27 +424,23 @@ const Main = () => {
                         <section className='news-header'>
                             <h3 className='news-header-title'>Новости о ЖК</h3>
                             <section className='news-header-tool'>
-                                <img className='news-header-tool-buttons-left' src={arrow} alt="arrow"/>
-                                <img className='news-header-tool-buttons-right' src={arrow} alt="arrow"/>
+                                <img onClick={() => newsBack()} className='news-header-tool-buttons-left' src={arrow} alt="arrow"/>
+                                <img onClick={() => newsNext()} className='news-header-tool-buttons-right' src={arrow} alt="arrow"/>
                             </section>
                         </section>
                         <section className='news-info-container'>
-                            <section className='news-info'>
-                                <section className='news-info-item'>
-                                    <time className='news-info-time'>12 июня 2020</time>
-                                    <h5 className='news-info-item-title'>Подписан договор с ЛенРусСтрой</h5>
-                                    <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
-                                </section>
-                                <section className='news-info-item'>
-                                    <time className='news-info-time'>12 июня 2020</time>
-                                    <h5 className='news-info-item-title'>Подписан договор проектного финансирования с ООО«Сбербанк»</h5>
-                                    <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
-                                </section>
-                                <section className='news-info-item'>
-                                    <time className='news-info-time'>12 июня 2020</time>
-                                    <h5 className='news-info-item-title'>Подписан договор с ЛенРусСтрой</h5>
-                                    <p className='news-info-item-description'>Они являются генподрядчиком стротельства Браун Хауса. Это имеет значение, так как это <br/> значит, что дом строит не абы кто</p>
-                                </section>
+                            <section className='news-info' style={{left: `-${thereIndex * (354 + (582 - 390) * ((window.screen.availWidth - 375) / (1920 - 375)))}px`}}>
+                                {news ? news.map((i) => {
+                                    return (
+                                        <section className='news-info-item'>
+                                            <time className='news-info-time'>{i.time}</time>
+                                            <h5 className='news-info-item-title'>{i.title}</h5>
+                                            <p className='news-info-item-description'>{i.description}</p>
+                                        </section>
+                                    )
+                                }) : null
+
+                                }
                             </section>
                         </section>
                     </section>
