@@ -315,15 +315,78 @@ const Main = () => {
                                 </section>
                                 <section className='right-block'>
                                     <section className='right-block-slider' style={{left: `-${secondIndex * (380 + (437 - 380) * ((window.screen.availWidth - 1280) / (1920 - 1280)))}px`}}>
-                                        <img className='right-block-slider-item' src={people} alt="people"/>
-                                        <img className='right-block-slider-item' src={children} alt="children"/>
-                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
-                                        <img className='right-block-slider-item' src={dude} alt="people"/>
-                                        <img className='right-block-slider-item' src={dude2} alt="children"/>
-                                        <img className='right-block-slider-item' src={forest} alt="weed"/>
-                                        <img className='right-block-slider-item' src={camerdude} alt="people"/>
-                                        <img className='right-block-slider-item' src={people} alt="children"/>
-                                        <img className='right-block-slider-item' src={children} alt="weed"/>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={people} alt="people"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={children} alt="children"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={people} alt="people"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={children} alt="children"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={people} alt="people"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={children} alt="children"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
                                     </section>
                                 </section>
                             </section>
@@ -348,20 +411,82 @@ const Main = () => {
                                     </section>
                                     <section className='left-block-slider-count'>
                                         <span className='left-block-slider-count_text'>{`0${secondIndex + 1}`} / 07</span>
-                                    </section>const screenWidth =
-                                    const screenHeight = window.screen.height
+                                    </section>
                                 </section>
                                 <section className='right-block'>
                                     <section className='right-block-slider' style={{left: `-${secondIndex * (380 + (437 - 380) * ((window.screen.availWidth - 1280) / (1920 - 1280)))}px`}}>
-                                        <img className='right-block-slider-item' src={people} alt="people"/>
-                                        <img className='right-block-slider-item' src={children} alt="children"/>
-                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
-                                        <img className='right-block-slider-item' src={people} alt="people"/>
-                                        <img className='right-block-slider-item' src={children} alt="children"/>
-                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
-                                        <img className='right-block-slider-item' src={people} alt="people"/>
-                                        <img className='right-block-slider-item' src={children} alt="children"/>
-                                        <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={people} alt="people"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={children} alt="children"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={people} alt="people"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={children} alt="children"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={people} alt="people"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={children} alt="children"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
+                                        <section className='right-block-slider-container'>
+                                            <img className='right-block-slider-item' src={weed} alt="weed"/>
+                                            <section className='right-block-slider-item-info'>
+                                                <h4 className='right-block-title'>{data[secondIndex].title}</h4>
+                                                <p className='right-block_paragraph'>{data[secondIndex].description}</p>
+                                                <a className='right-block_link' href="#">ПОДРОБНЕЕ</a>
+                                            </section>
+                                        </section>
                                     </section>
                                 </section>
                             </section>

@@ -383,15 +383,41 @@
   width: calc(645px + 500 * (100vw - 1280px) / 640);
 }
 .seven-problems-block .slider-block .right-block .right-block-slider {
+  display: flex;
   position: absolute;
   width: 3933px;
   transition: all 0.5s ease-in-out;
 }
-.seven-problems-block .slider-block .right-block .right-block-slider .right-block-slider-item {
+.seven-problems-block .slider-block .right-block .right-block-slider .right-block-slider-container .right-block-slider-item {
   position: relative;
   width: calc(360px + 57 * (100vw - 1280px) / 640);
   height: calc(619px + 99 * (100vw - 1280px) / 640);
   margin-right: 20px;
+}
+.seven-problems-block .slider-block .right-block .right-block-slider .right-block-slider-container .right-block-slider-item-info {
+  display: none;
+}
+.seven-problems-block .slider-block .right-block .right-block-slider .right-block-slider-container .right-block-slider-item-info .right-block-title {
+  font-size: 18px;
+  line-height: 21.6px;
+  margin-top: 24px;
+  font-family: "Optima Cyr", sans-serif;
+  color: #A19B8E;
+}
+.seven-problems-block .slider-block .right-block .right-block-slider .right-block-slider-container .right-block-slider-item-info .right-block_paragraph {
+  font-size: 15px;
+  line-height: 21px;
+  margin-top: 16px;
+  font-family: "Inter", sans-serif;
+  color: #412923;
+}
+.seven-problems-block .slider-block .right-block .right-block-slider .right-block-slider-container .right-block-slider-item-info .right-block_link {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 21.6px;
+  margin-top: 32px;
+  font-family: "Optima Cyr", sans-serif;
+  color: #CC9268;
 }
 
 .developer {
@@ -1448,6 +1474,41 @@
     font-size: 15px !important;
     width: 100% !important;
     line-height: 21px !important;
+  }
+
+  .left-block {
+    display: none;
+  }
+
+  .slider-block {
+    height: 700px !important;
+  }
+
+  .news-info-item {
+    height: calc(170px + -15 * ((100vw - 375px) / (768 - 375))) !important;
+  }
+
+  .right-block-slider-item {
+    width: calc(252px + 66 * ((100vw - 375px) / (768 - 375))) !important;
+    height: calc(252px + 66 * ((100vw - 375px) / (768 - 375))) !important;
+    object-fit: cover !important;
+  }
+
+  .right-block-slider-item-info {
+    display: block !important;
+    width: calc(252px + 66 * ((100vw - 375px) / (768 - 375))) !important;
+  }
+
+  .right-block {
+    width: 100% !important;
+  }
+
+  .seven-problems-block {
+    align-items: center !important;
+  }
+
+  .seven-problems {
+    width: calc(200px + 70 * ((100vw - 375px) / (768 - 375))) !important;
   }
 }
 @media screen and (max-width: 550px) {

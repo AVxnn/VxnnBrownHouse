@@ -399,15 +399,44 @@ $Gold: #CC9268
       width: calc(645px + (1145 - 645) * ((100vw - 1280px) / (1920 - 1280)))
 
       .right-block-slider
+        display: flex
         position: absolute
         width: calc(437px * 9)
         transition: all 0.5s ease-in-out
 
-        .right-block-slider-item
-          position: relative
-          width: calc(360px + (417 - 360) * ((100vw - 1280px) / (1920 - 1280)))
-          height: calc(619px + (718 - 619) * ((100vw - 1280px) / (1920 - 1280)))
-          margin-right: 20px
+        .right-block-slider-container
+
+
+          .right-block-slider-item
+            position: relative
+            width: calc(360px + (417 - 360) * ((100vw - 1280px) / (1920 - 1280)))
+            height: calc(619px + (718 - 619) * ((100vw - 1280px) / (1920 - 1280)))
+            margin-right: 20px
+
+          .right-block-slider-item-info
+            display: none
+
+            .right-block-title
+              font-size: 18px
+              line-height: 21.6px
+              margin-top: 24px
+              font-family: $OptimaCyr
+              color: $Beige
+
+            .right-block_paragraph
+              font-size: 15px
+              line-height: 21px
+              margin-top: 16px
+              font-family: $inter
+              color: $Braun
+
+            .right-block_link
+              text-decoration: none
+              font-size: 18px
+              line-height: 21.6px
+              margin-top: 32px
+              font-family: $OptimaCyr
+              color: $Gold
 
 
 .developer
@@ -1401,6 +1430,33 @@ $Gold: #CC9268
     font-size: 15px !important
     width: 100% !important
     line-height: 21px !important
+
+  .left-block
+    display: none
+
+  .slider-block
+    height: 700px !important
+
+  .news-info-item
+    height: resp(170, 155, 375, 768) !important
+
+  .right-block-slider-item
+    width: resp(252, 318, 375, 768) !important
+    height: resp(252, 318, 375, 768) !important
+    object-fit: cover !important
+
+  .right-block-slider-item-info
+    display: block !important
+    width: resp(252, 318, 375, 768) !important
+
+  .right-block
+    width: 100% !important
+
+  .seven-problems-block
+    align-items: center !important
+
+  .seven-problems
+    width: resp(200, 270, 375, 768) !important
 
 
 
