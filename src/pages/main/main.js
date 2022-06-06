@@ -27,6 +27,8 @@ import apartaments from '../../img/appartaments.png'
 import apartaments1 from '../../img/apartaments1.png'
 import apartaments2 from '../../img/apartaments2.png'
 import message from '../../img/message.png'
+import Shop from '../../img/Shop.png'
+import Health from '../../img/Health.png'
 
 import './style.css'
 
@@ -98,6 +100,10 @@ const Main = () => {
         console.log(secondIndex)
     }
 
+    const skipDownHandler = () => {
+        document.querySelector(".link-top").scrollIntoView({behavior: "smooth"})
+    }
+
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((current) => {
@@ -107,8 +113,6 @@ const Main = () => {
         }, 6000)
         return () => clearInterval(interval)
     }, [])
-
-    console.log(window.screen.availWidth)
 
     return (
         <>
@@ -194,7 +198,7 @@ const Main = () => {
                         </section>
                         <section className='down'>
                             <section className='arrowDown'>
-                                <img className='arrowDown-img' src={arrowDown} alt="Стрелка вниз"/>
+                                <img className='arrowDown-img' onClick={() => skipDownHandler()} src={arrowDown} alt="Стрелка вниз"/>
                             </section>
                             <section className='slider-numbers'>
                                 <section className='slider-numbers-container'>
@@ -259,7 +263,7 @@ const Main = () => {
                         </section>
                         <section className='down'>
                             <section className='arrowDown'>
-                                <img className='arrowDown-img' src={arrowDown} alt="Стрелка вниз"/>
+                                <img className='arrowDown-img' onClick={() => skipDownHandler()} src={arrowDown} alt="Стрелка вниз"/>
                             </section>
                             <section className='slider-numbers'>
                                 <section className='slider-numbers-container'>
@@ -277,7 +281,7 @@ const Main = () => {
             )}
 
             <section className='container-help'>
-                <section className='container'>
+                <section className='container link-top'>
                     <section className='info-block'>
                         <section className='info-block_container'>
                             <section className='info-first'>
@@ -555,9 +559,9 @@ const Main = () => {
                         </section>
                         <section className='news-info-container'>
                             <section className='news-info' style={{left: `-${thereIndex * (354 + (582 - 390) * ((window.screen.availWidth - 375) / (1920 - 375)))}px`}}>
-                                {news ? news.map((i) => {
+                                {news ? news.map((i, num) => {
                                     return (
-                                        <section className='news-info-item'>
+                                        <section key={num} className='news-info-item'>
                                             <time className='news-info-time'>{i.time}</time>
                                             <h5 className='news-info-item-title'>{i.title}</h5>
                                             <p className='news-info-item-description'>{i.description}</p>

@@ -183,9 +183,10 @@ $Gold: #CC9268
     .choose
       display: flex
       position: relative
+      z-index: 2
       flex-direction: column
       width: calc(350px + (410 - 350) * ((100vw - 1280px) / (1920 - 1280)))
-      margin-top: calc(94px + (122 - 94) * ((100vw - 1280px) / (1920 - 1280)))
+      margin-top: calc(94px + (102 - 94) * ((100vw - 1280px) / (1920 - 1280)))
       left: calc(668px + (1170 - 668) * ((100vw - 1280px) / (1920 - 1280)))
 
       .choose-container
@@ -302,7 +303,7 @@ $Gold: #CC9268
         font-size: resp(40, 52, 1280, 1920)
         font-family: $OptimaCyr
         width: 524px
-        margin-top: resp(115, 311, 1280, 1920)
+        margin-top: resp(115, 110, 1280, 1920)
         color: #412923
 
     .info-second
@@ -426,7 +427,7 @@ $Gold: #CC9268
             .right-block_paragraph
               font-size: 15px
               line-height: 21px
-              margin-top: 16px
+              margin: 16px 0
               font-family: $inter
               color: $Braun
 
@@ -437,7 +438,6 @@ $Gold: #CC9268
               margin-top: 32px
               font-family: $OptimaCyr
               color: $Gold
-
 
 .developer
   width: 100%
@@ -534,7 +534,6 @@ $Gold: #CC9268
       &:hover
         color: $Gold
 
-
   .map-bottom
     position: absolute
     bottom: 58px
@@ -543,13 +542,13 @@ $Gold: #CC9268
       display: flex
       flex-direction: column
       font-family: $OptimaCyr
-      font-size: calc(32px + (48 - 32) * ((100vw - 1280px) / (1920 - 1280)))
+      font-size: resp(32, 40, 1280, 1920)
       font-weight: 400
       color: $white
 
       .map-bottom-title_gold
         font-family: $OptimaCyr
-        font-size: calc(52px + (64 - 52) * ((100vw - 1280px) / (1920 - 1280)))
+        font-size: resp(52, 64, 1280, 1920)
         color: $Gold
 
 
@@ -1165,6 +1164,21 @@ $Gold: #CC9268
   .news-info-item
     width: resp(280, 320, 1024, 1280) !important
 
+  .map-nav-item
+    font-size: 18px !important
+
+  .map-bottom-title
+    font-size: 32px !important
+  .map-bottom-title_gold
+    font-size: 52px !important
+
+  .map-img
+    width: resp(40, 48, 1024, 1280) !important
+
+  .choose
+    z-index: 0 !important
+
+
 
 
 
@@ -1252,6 +1266,11 @@ $Gold: #CC9268
   .news-info-item
     width: resp(270, 400, 768, 1024) !important
     padding: resp(32, 40, 768, 1024) 24px !important
+
+  .map-bottom-title
+    font-size: resp(24, 32, 768, 1024)
+  .map-bottom-title_gold
+    font-size: resp(40, 52, 768, 1024)
 
 
 
@@ -1432,10 +1451,10 @@ $Gold: #CC9268
     line-height: 21px !important
 
   .left-block
-    display: none
+    display: none !important
 
   .slider-block
-    height: 700px !important
+    height: 600px !important
 
   .news-info-item
     height: resp(170, 155, 375, 768) !important
@@ -1451,12 +1470,24 @@ $Gold: #CC9268
 
   .right-block
     width: 100% !important
+    height: 600px !important
 
   .seven-problems-block
     align-items: center !important
 
   .seven-problems
     width: resp(200, 270, 375, 768) !important
+
+  .right-block_paragraph
+    height: 152px !important
+    overflow: hidden !important
+    text-overflow: ellipsis !important
+
+  .map-bottom-title
+    font-size: 24px !important
+  .map-bottom-title_gold
+    font-size: 40px !important
+
 
 
 
